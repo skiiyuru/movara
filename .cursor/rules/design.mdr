@@ -1,0 +1,43 @@
+# Design Guidelines Rule
+
+Always reference and follow the design guidelines documented in `docs/design-guidelines.md` when working on this project.
+
+## Key Requirements
+
+1. **Color Palette**: Use the specified color values from the design guidelines:
+   - Primary: Teal/Green (#38b2ac), Pure White (#ffffff), Light Gray (#f7fafc)
+   - Secondary: Warm Gray (#4a5568), Light Blue (#e6fffa), Dark Gray (#2d3748)
+   - Accent: Deep Navy Blue (#1a365d), Gold (#d69e2e)
+
+2. **Typography**: Follow the font hierarchy and sizing specified:
+   - H1: 3.5rem (56px), H2: 2.5rem (40px), H3: 2rem (32px), H4: 1.5rem (24px)
+   - Body: 1rem (16px), Small: 0.875rem (14px)
+   - Use Inter or system sans-serif for body text, modern serif for headlines
+
+3. **Layout & Spacing**: Implement the specified grid system and spacing scale:
+   - 12-column grid for desktop, 8-column for tablet, 4-column for mobile
+   - Spacing: XS (8px), S (16px), M (24px), L (32px), XL (48px), XXL (64px)
+   - Max-width: 1200px for main content
+
+4. **Component Design**: Follow the component specifications:
+   - Clean, minimal cards with 8px border radius and subtle shadows
+   - 48px height buttons with 6px border radius
+   - 32px internal padding for content blocks
+
+5. **Responsive Design**: Use the specified breakpoints:
+   - Mobile: 320px - 768px
+   - Tablet: 768px - 1024px
+   - Desktop: 1024px+
+
+6. **Accessibility**: Ensure WCAG 2.1 AA compliance with proper contrast ratios and semantic HTML
+
+7. **Performance**: Optimize for Core Web Vitals and maintain 90+ Lighthouse scores
+
+## Implementation Notes
+
+- Use Tailwind CSS utility classes that align with the design system
+- Implement proper hover states and micro-interactions as specified
+- Follow the brand identity principles: Professional, Innovative, Results-driven, Client-centric
+- Reference the full design guidelines document for detailed specifications
+
+Always consult `docs/design-guidelines.md` for complete and up-to-date design specifications before implementing any visual elements or components. 

@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-display: 'Hedvig Letters Serif Variable', serif;
+  --font-sans: 'Instrument Sans', sans-serif;
+}
+

@@ -1,0 +1,22 @@
+---
+// import Footer from '@/components/Footer.astro'
+// Components
+// import Nav from '@/components/Nav.astro'
+import BaseHead from './BaseHead.astro'
+
+// CSS & Fonts
+import '@fontsource-variable/hedvig-letters-serif'
+import '@fontsource-variable/instrument-sans'
+import '@/styles/global.css'
+---
+
+<html lang="en">
+  <BaseHead {...Astro.props} />
+  <body class="font-sans antialiased">
+    <!-- <Nav /> -->
+    <main class="">
+      <slot />
+    </main>
+    <!-- <Footer /> -->
+  </body>
+</html>
