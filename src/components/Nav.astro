@@ -1,0 +1,160 @@
+<header id="header" class="w-full">
+  <!-- Nav Bar (always visible, z-50) -->
+  <nav class="flex items-center justify-between h-16 px-4 md:px-8 transition-colors duration-500 bg-white/80 backdrop-blur-md border-b border-gray-200/50 z-50 relative" id="main-nav">
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0" aria-label="Movara">
+      <span id="nav-logo-text" class="text-2xl font-bold transition-colors duration-500">MOVARA</span>
+    </a>
+    <!-- Desktop Nav Links -->
+    <ul class="hidden md:flex flex-1 justify-center items-center gap-16">
+      <li><a href="/work" class="font-medium hover:underline transition-colors duration-500 nav-link">Work</a></li>
+      <li><a href="/latest" class="font-medium hover:underline flex flex-col items-center transition-colors duration-500 nav-link">Latest <span class="block w-1 h-1 rounded-full mt-1 nav-dot"></span></a></li>
+      <li><a href="/people" class="font-medium hover:underline transition-colors duration-500 nav-link">People</a></li>
+    </ul>
+    <!-- Menu/Close Button -->
+    <button id="menu-btn" aria-label="Open menu" class="ml-auto flex items-center justify-center w-12 h-12 rounded-lg transition-colors duration-500 focus:outline-none bg-transparent">
+      <span class="sr-only">Open menu</span>
+      <svg id="menu-icon" width="28" height="28" fill="none" viewBox="0 0 28 28" class="block nav-icon">
+        <rect y="9" width="28" height="2" rx="1" />
+        <rect y="17" width="28" height="2" rx="1" />
+      </svg>
+      <svg id="close-icon" width="28" height="28" fill="none" viewBox="0 0 28 28" class="hidden nav-icon">
+        <line x1="7" y1="7" x2="21" y2="21" stroke-width="2" stroke-linecap="round" />
+        <line x1="21" y1="7" x2="7" y2="21" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Expandable Menu Overlay (z-40, full screen, always below nav) -->
+  <div id="expandable-menu" class="hidden fixed inset-0 z-40 bg-[#1a365d] text-white" style="clip-path: inset(0% 0% 100% 0%);">
+    <!-- Desktop layout -->
+    <div class="hidden md:flex w-full h-full pt-16">
+      <!-- Left: bottom-aligned Contact/LinkedIn -->
+      <div class="flex-1 flex flex-col justify-end p-16">
+        <ul class="space-y-8 text-5xl font-serif mb-8">
+          <li class="overlay-link"><a href="/contact" class="hover:underline">Contact</a></li>
+          <li class="overlay-link"><a href="https://www.linkedin.com/company/purposeventure/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:underline">LinkedIn
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9H15M15 9L10.5 4.5M15 9L10.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </a></li>
+        </ul>
+      </div>
+      <!-- Right: bottom-aligned The Latest -->
+      <div class="flex-[2] flex flex-col justify-end p-16 articles-wrapper h-full">
+        <span class="uppercase text-gray-300 tracking-widest mb-6 label grey">The Latest</span>
+        <div class="space-y-8 articles">
+          <div class="border-b border-white/20 pb-4 mb-4 article-list-item overlay-link">
+            <a href="#" class="block text-xl font-medium hover:underline"><p class="medium">Property Insurance in an Era of Climate-Related Disasters</p></a>
+          </div>
+          <div class="border-b border-white/20 pb-4 mb-4 article-list-item overlay-link">
+            <a href="#" class="block text-xl font-medium hover:underline"><p class="medium">PVG’s Partners on Climate Challenges and Opportunities in a Volatile 2025</p></a>
+          </div>
+          <div class="article-list-item overlay-link">
+            <a href="#" class="block text-xl font-medium hover:underline"><p class="medium">New Year, New Name, New Site.</p><p class="small text-xs text-gray-300 mt-1">December 18, 2024</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile layout -->
+    <div class="flex md:hidden flex-col h-full pt-16">
+      <div class="flex-1"></div>
+      <ul class="flex flex-col space-y-8 text-3xl font-serif px-8 pb-12">
+        <li class="overlay-link"><a href="/work" class="hover:underline">Work</a></li>
+        <li class="overlay-link"><a href="/latest" class="hover:underline">Latest</a></li>
+        <li class="overlay-link"><a href="/people" class="hover:underline">People</a></li>
+        <li class="overlay-link"><a href="/contact" class="hover:underline">Contact</a></li>
+        <li class="overlay-link"><a href="https://www.linkedin.com/company/purposeventure/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:underline">LinkedIn
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9H15M15 9L10.5 4.5M15 9L10.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<style>
+#main-nav .nav-icon rect,
+#main-nav .nav-icon line {
+  stroke: #1a365d;
+  fill: #1a365d;
+}
+.menu-open #main-nav {
+  background: #1a365d !important;
+  border-bottom: none !important;
+}
+.menu-open #main-nav #nav-logo-text,
+.menu-open #main-nav .nav-link {
+  color: #fff !important;
+}
+.menu-open #main-nav .nav-dot {
+  background: #fff !important;
+}
+.menu-open #main-nav .nav-icon rect,
+.menu-open #main-nav .nav-icon line {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+#menu-btn {
+  background: transparent !important;
+}
+</style>
+
+<script>
+import { gsap } from 'gsap'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menu-btn')
+  const menuIcon = document.getElementById('menu-icon')
+  const closeIcon = document.getElementById('close-icon')
+  const expandableMenu = document.getElementById('expandable-menu')
+  const header = document.getElementById('header')
+
+  let isOpen = false
+
+  function openMenu() {
+    isOpen = true
+    if (!header || !menuIcon || !closeIcon || !expandableMenu)
+      return
+    expandableMenu.classList.remove('hidden')
+    gsap.set(expandableMenu, { clipPath: 'inset(0% 0% 100% 0%)' })
+    header.classList.add('menu-open')
+    menuIcon.classList.add('hidden')
+    closeIcon.classList.remove('hidden')
+    gsap.to(expandableMenu, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 0.5,
+      ease: 'power2.out',
+    })
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeMenu() {
+    isOpen = false
+    if (!header || !menuIcon || !closeIcon || !expandableMenu)
+      return
+    header.classList.remove('menu-open')
+    menuIcon.classList.remove('hidden')
+    closeIcon.classList.add('hidden')
+    gsap.to(expandableMenu, {
+      clipPath: 'inset(0% 0% 100% 0%)',
+      duration: 0.5,
+      ease: 'power2.in',
+      onComplete: () => {
+        expandableMenu.classList.add('hidden')
+        gsap.set(expandableMenu, { clipPath: 'inset(0% 0% 100% 0%)' })
+      },
+    })
+    document.body.style.overflow = ''
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    if (isOpen)
+      closeMenu()
+    else openMenu()
+  })
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen)
+      closeMenu()
+  })
+})
+</script>
