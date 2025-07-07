@@ -1,0 +1,81 @@
+---
+// Props: title (string), videoUrl (string)
+const { title = 'PVG', videoUrl = 'https://www.w3schools.com/html/mov_bbb.mp4' } = Astro.props;
+---
+<section class="homepage-header relative w-full min-h-screen overflow-hidden">
+  <!-- Video background -->
+  <video
+    src={videoUrl}
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="auto"
+    class="absolute inset-0 w-full h-full object-cover"
+    style="z-index:0;"
+  ></video>
+  <!-- SVG overlay with text cutout -->
+  <svg class="absolute inset-0 w-full h-full" width="100%" height="100%" viewBox="0 0 1600 900" style="z-index:1; display:block;" xmlns="http://www.w3.org/2000/svg">
+    <g style="mix-blend-mode: normal;">
+      <rect width="1600" height="900" fill="white" />
+      <text
+        id="header-mask-text"
+        x="50%"
+        y="55%"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-size="480"
+        font-family="sans-serif"
+        font-weight="bold"
+        fill="black"
+        style="letter-spacing: -20px; mix-blend-mode: destination-out;"
+      >
+        {title}
+      </text>
+    </g>
+  </svg>
+  <div class="bottom relative z-10 w-full px-8 pb-8 flex flex-col items-start min-h-[80vh] justify-end">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-900 mb-8 max-w-4xl">
+      Driving climate solutions from idea to impact.
+    </h1>
+    <ul class="flex gap-8 text-base md:text-lg font-medium text-slate-800">
+      <li><a href="/work" class="hover:underline">Work</a></li>
+      <li><a href="/latest" class="hover:underline">Latest</a></li>
+      <li><a href="/people" class="hover:underline">People</a></li>
+    </ul>
+  </div>
+  <div class="text-intro max-w-4xl mx-auto py-16 px-8">
+    <h2 class="text-3xl font-bold mb-6">Intro Section Placeholder</h2>
+    <p class="text-lg">This is a placeholder for the text-intro section, matching the PVG site structure. Replace with your actual content.</p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap'
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const text = document.getElementById('header-mask-text')
+  if (!text)
+      return
+  const minFontSize = 480
+  const maxFontSize = 1000
+  const minY = 55
+  const maxY = 85
+  const maxScroll = 100
+  function updateMask() {
+      const scrollY = window.scrollY
+      const percent = Math.min(scrollY / maxScroll, 1)
+      gsap.to(text, {
+        attr: {
+          'font-size': minFontSize + (maxFontSize - minFontSize) * percent,
+          'y': `${minY + (maxY - minY) * percent}%`,
+        },
+        duration: 0.5,
+        ease: 'power2.out',
+        overwrite: 'auto',
+      })
+  }
+  window.addEventListener('scroll', updateMask)
+  updateMask()
+  })
+</script>

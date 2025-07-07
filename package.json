@@ -11,13 +11,18 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
     "@fontsource-variable/hedvig-letters-serif": "^5.2.6",
     "@fontsource-variable/instrument-sans": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "astro": "^5.10.1",
     "astro-seo": "^0.8.4",
     "cloudinary": "^2.7.0",
     "gsap": "^3.13.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "resend": "^4.6.0",
     "tailwindcss": "^4.1.11"
   },

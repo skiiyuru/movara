@@ -6,3 +6,33 @@
   --font-sans: 'Instrument Sans', sans-serif;
 }
 
+/* Nav Component Styles */
+#main-nav .nav-icon rect,
+#main-nav .nav-icon line {
+  stroke: #1a365d;
+  fill: #1a365d;
+}
+
+.menu-open #main-nav {
+  background: #1a365d !important;
+  border-bottom: none !important;
+}
+
+.menu-open #main-nav #nav-logo-text {
+  color: #fff !important;
+}
+
+.menu-open #main-nav .nav-dot {
+  background: #fff !important;
+}
+
+.menu-open #main-nav .nav-icon rect,
+.menu-open #main-nav .nav-icon line {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+
+#menu-btn {
+  background: transparent !important;
+}
+

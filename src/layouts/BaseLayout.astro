@@ -1,19 +1,22 @@
 ---
 // import Footer from '@/components/Footer.astro'
 // Components
-import Nav from '@/components/Nav.astro'
+import Nav from '@/components/Nav.tsx'
 import BaseHead from './BaseHead.astro'
 
 // CSS & Fonts
 import '@fontsource-variable/hedvig-letters-serif'
 import '@fontsource-variable/instrument-sans'
 import '@/styles/global.css'
+
+// Get current path for navigation
+const currentPath = Astro.url.pathname
 ---
 
 <html lang="en">
   <BaseHead {...Astro.props} />
   <body class="font-sans antialiased">
-    <Nav />
+    <Nav client:load currentPath={currentPath} />
     <main class="">
       <slot />
     </main>
