@@ -15,9 +15,7 @@ export default function NavLink({ href, title, className = '', currentPath }: { 
     <a
       href={href}
       className={`font-medium transition-colors duration-300 ${
-        isActive
-          ? '!font-bold !text-[#1a365d]'
-          : 'text-gray-800 hover:text-[#1a365d]'
+        isActive ? 'font-bold' : ''
       } ${className}`}
       aria-current={isActive ? 'page' : undefined}
     >

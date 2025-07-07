@@ -4,36 +4,82 @@
 @theme {
   --font-display: 'Hedvig Letters Serif Variable', serif;
   --font-sans: 'Instrument Sans', sans-serif;
+  
+  /* Brand Colors */
+  --color-primary: #1a365d; /* Deep Navy Blue - Primary brand color */
+  --color-secondary: #38b2ac; /* Teal/Green - Success states */
+  --color-accent: #d69e2e; /* Gold - Warning states */
+  --color-warm-gray: #4a5568; /* Warm Gray - Secondary text */
+  --color-light-blue: #e6fffa; /* Light Blue - Highlight backgrounds */
+  --color-dark-gray: #2d3748; /* Dark Gray - Headers */
+  --color-pure-white: #ffffff; /* Pure White - Clean backgrounds */
+  --color-light-gray: #f7fafc; /* Light Gray - Subtle backgrounds */
 }
 
 /* Nav Component Styles */
-#main-nav .nav-icon rect,
-#main-nav .nav-icon line {
-  stroke: #1a365d;
-  fill: #1a365d;
+/* Logo colors */
+#nav-logo-text {
+  color: var(--color-primary);
 }
 
-.menu-open #main-nav {
-  background: #1a365d !important;
-  border-bottom: none !important;
+.menu-open #nav-logo-text {
+  color: var(--color-pure-white);
 }
 
-.menu-open #main-nav #nav-logo-text {
-  color: #fff !important;
-}
-
-.menu-open #main-nav .nav-dot {
-  background: #fff !important;
-}
-
-.menu-open #main-nav .nav-icon rect,
-.menu-open #main-nav .nav-icon line {
-  stroke: #fff !important;
-  fill: #fff !important;
-}
-
+/* Menu button background */
 #menu-btn {
-  background: transparent !important;
+  background: var(--color-primary);
+}
+
+.menu-open #menu-btn {
+  background: var(--color-pure-white);
+}
+
+/* Menu icons */
+.nav-icon rect,
+.nav-icon line {
+  stroke: var(--color-pure-white);
+  fill: var(--color-pure-white);
+}
+
+.menu-open .nav-icon rect,
+.menu-open .nav-icon line {
+  stroke: var(--color-primary);
+  fill: var(--color-primary);
+}
+
+/* Navigation bar background */
+.menu-open #main-nav {
+  background: var(--color-primary);
+  border-bottom: none;
+}
+
+/* Navigation links */
+#main-nav a {
+  color: var(--color-primary);
+}
+
+#main-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Active link styling */
+#main-nav a[aria-current="page"] {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.menu-open #main-nav a {
+  color: var(--color-pure-white);
+}
+
+.menu-open #main-nav a:hover {
+  color: var(--color-pure-white);
+}
+
+.menu-open #main-nav a[aria-current="page"] {
+  font-weight: bold;
+  color: var(--color-pure-white);
 }
 
 /* Hero Component Styles */
@@ -104,6 +150,51 @@
 .hero-svg {
   width: 100%;
   position: relative;
-  box-shadow: inset 0 0 0 2px #eef7ff, 0 0 0 50vw #eff7ff;
+  box-shadow: inset 0 0 0 2px var(--color-light-blue), 0 0 0 50vw var(--color-light-blue);
+}
+
+/* Services Section Styles */
+.stacking-cards {
+  background: var(--color-light-gray);
+}
+
+.stacked-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stacked-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile styles - normal layout */
+@media (max-width: 767px) {
+  .stacked-card {
+    transform: none !important;
+    scale: 1 !important;
+  }
+}
+
+/* Desktop styles - stacking effect */
+@media (min-width: 768px) {
+  .stacking-cards {
+    min-height: 100vh;
+  }
+  
+  .stacking-cards .relative {
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .stacked-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform-origin: center top;
+    will-change: transform;
+  }
 }
 

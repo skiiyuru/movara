@@ -70,7 +70,7 @@ export default function Nav({ currentPath }: { currentPath: string }) {
       <nav className="flex items-center justify-between h-20 px-4 md:px-18 lg:px-32 transition-colors duration-500 bg-white border-b border-gray-200/50 z-50 relative" id="main-nav">
         {/* Logo */}
         <a href="/" className="flex-shrink-0" aria-label="Movara">
-          <span id="nav-logo-text" className="text-2xl font-black transition-colors duration-500 text-gray-800">MOVARA</span>
+          <span id="nav-logo-text" className="text-2xl font-black transition-colors duration-500">MOVARA</span>
         </a>
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex flex-1 justify-center items-center gap-16">
@@ -83,7 +83,7 @@ export default function Nav({ currentPath }: { currentPath: string }) {
           ref={menuBtnRef}
           id="menu-btn" 
           aria-label="Open menu" 
-          className="ml-auto flex items-center justify-center w-12 h-12 rounded-lg transition-colors duration-500 focus:outline-none bg-transparent"
+          className="ml-auto flex items-center justify-center w-12 h-12 rounded-lg transition-colors duration-500 focus:outline-none"
           onClick={handleMenuClick}
         >
           <span className="sr-only">Open menu</span>
@@ -118,7 +118,7 @@ export default function Nav({ currentPath }: { currentPath: string }) {
       <div 
         ref={expandableMenuRef}
         id="expandable-menu" 
-        className="hidden fixed inset-0 z-40 bg-[#1a365d] text-white" 
+        className="hidden fixed inset-0 z-40 bg-primary text-white" 
         style={{ clipPath: 'inset(0% 0% 100% 0%)' }}
       >
         {/* Desktop layout */}

@@ -1,10 +1,12 @@
 ---
-import Hero from '@/components/Hero'
-import Intro from '@/components/Intro'
+import Hero from '@/components/home/Hero'
+import Intro from '@/components/home/Intro'
+import Services from '@/components/home/Services'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
   <Hero client:load />
   <Intro client:load />
+  <Services client:visible />
 </BaseLayout>
