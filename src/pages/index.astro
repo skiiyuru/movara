@@ -1,19 +1,10 @@
 ---
-import Header from '@/components/Header.astro'
+import Hero from '@/components/Hero'
+import Intro from '@/components/Intro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-  <Header />
-  <section class="py-32 px-8 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8">Test Content Section</h2>
-    <p class="mb-6 text-lg">This is a large content section added to test the header's scroll effect. Scroll down to see the video mask animate as you move the page.</p>
-    <div class="space-y-8">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam at augue non nibh tristique euismod.</p>
-      <p>Aliquam erat volutpat. Suspendisse potenti. Mauris euismod, sapien eu commodo cursus, enim erat dictum urna, nec dictum enim enim nec urna. Proin euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque.</p>
-      <p>Morbi non urna nec urna cursus dictum. Proin euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam at augue non nibh tristique euismod. Aliquam erat volutpat. Suspendisse potenti. Mauris euismod, sapien eu commodo cursus, enim erat dictum urna, nec dictum enim enim nec urna.</p>
-      <p>Proin euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-    </div>
-  </section>
+  <Hero client:load />
+  <Intro client:load />
 </BaseLayout>

@@ -194,4 +194,4 @@ export default function Nav({ currentPath }: { currentPath: string }) {
       </div>
     </header>
   )
-} 
+}
