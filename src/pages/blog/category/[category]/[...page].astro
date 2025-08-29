@@ -1,0 +1,81 @@
+---
+import type { GetStaticPaths, Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection('posts', (entry: CollectionEntry<'posts'>) => !entry.data.isDraft)
+  const uniqueCategories = [...new Set(allPosts.map(post => post.data.category))]
+
+  return uniqueCategories.flatMap((category) => {
+    const filteredPosts = allPosts
+      .filter(post => post.data.category === category)
+      .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    return paginate(filteredPosts, { params: { category }, pageSize: 4 })
+  })
+}) satisfies GetStaticPaths
+
+const { page } = Astro.props as { page: Page<CollectionEntry<'posts'>> }
+const { category } = Astro.params
+
+const allPostsForDropdown = await getCollection('posts', (entry: CollectionEntry<'posts'>) => !entry.data.isDraft)
+const categories = [...new Set(allPostsForDropdown.map(p => p.data.category))]
+---
+
+<BaseLayout
+  title={`The Latest | ${category}`}
+  description={`All posts for ${category} category`}
+>
+  <section class="bg-white text-slate-900">
+    <div class="container mx-auto py-12 px-6 md:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-4xl md:text-5xl font-display text-primary">The Latest</h2>
+
+        <div>
+          <label for="category-select" class="sr-only">Filter by category</label>
+          <select
+            id="category-select"
+            class="px-4 py-2 rounded-full border border-slate-300 text-slate-700 bg-white"
+            onchange="window.location.href = this.value"
+          >
+            <option value="/blog">Show All Categories</option>
+            {categories.map(c => (
+              <option value={`/blog/category/${c}`} selected={c === category}>{c}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        {page.data.map((post: CollectionEntry<'posts'>) => (
+          <article class="group">
+            <a href={`/blog/${post.slug}`} class="block">
+              <Image src={post.data.thumbnail} alt={post.data.title} class="w-full aspect-[16/9] object-cover rounded-2xl" />
+            </a>
+            <div class="mt-3">
+              <div class="mb-2">
+                <span class="inline-block rounded-full bg-slate-100 text-slate-700 text-xs px-3 py-1">{post.data.category}</span>
+              </div>
+              <h2 class="text-xl md:text-2xl leading-snug">
+                <a href={`/blog/${post.slug}`} class="hover:underline">{post.data.title}</a>
+              </h2>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <nav class="mt-10 flex items-center justify-between">
+        {page.url.prev && (
+          <a href={page.url.prev} class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50 transition">← Newer</a>
+        )}
+        <div class="flex-1" />
+        {page.url.next && (
+          <a href={page.url.next} class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50 transition">Older →</a>
+        )}
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

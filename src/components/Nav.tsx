@@ -76,7 +76,7 @@ export default function Nav({ currentPath }: { currentPath: string }) {
         <ul className="hidden md:flex flex-1 justify-center items-center gap-16">
           <li><NavLink href="/about" title="About" currentPath={currentPath} /></li>
           <li><NavLink href="/contact" title="Contact" currentPath={currentPath} /></li>
-          <li><NavLink href="/latest" title="Latest" currentPath={currentPath} /></li>
+          <li><NavLink href="/blog" title="Latest" currentPath={currentPath} /></li>
         </ul>
         {/* Menu/Close Button */}
         <button 
@@ -172,7 +172,7 @@ export default function Nav({ currentPath }: { currentPath: string }) {
           <div className="flex-1"></div>
           <ul className="flex flex-col space-y-8 text-3xl font-serif px-8 pb-12">
             <li className="overlay-link"><NavLink href="/about" title="About" currentPath={currentPath} /></li>
-            <li className="overlay-link"><NavLink href="/latest" title="Latest" currentPath={currentPath} /></li>
+            <li className="overlay-link"><NavLink href="/blog" title="Latest" currentPath={currentPath} /></li>
             <li className="overlay-link">
               <a href="/contact" className="hover:underline text-white">Contact</a>
             </li>
