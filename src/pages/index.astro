@@ -2,6 +2,8 @@
 import Hero from '@/components/home/Hero'
 import Intro from '@/components/home/Intro'
 import Services from '@/components/home/Services'
+import Testimonials from '@/components/home/Testimonials'
+import WhyMovara from '@/components/home/WhyMovara.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
@@ -9,4 +11,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
   <Hero client:load />
   <Intro client:load />
   <Services client:visible />
+  <Testimonials client:visible />
+  <WhyMovara />
 </BaseLayout>

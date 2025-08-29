@@ -135,7 +135,7 @@ export default function Services() {
       }
       if (!animating && direction) {
         animating = true
-        tl.tweenTo(direction, { onComplete: () => (animating = false) })
+        tl.tweenTo(direction, { onComplete: () => { animating = false } })
       }
     }
 
@@ -168,8 +168,8 @@ export default function Services() {
     ScrollTrigger.create({
       trigger: containerRef.current,
       pin: true,
-      start: "top 20%",
-      end: "+=100",
+      start: "top top",
+      end: "bottom top",
       onEnter: () => {
         if (cardsObserver.isEnabled) return
         cardsObserver.enable()
@@ -192,7 +192,7 @@ export default function Services() {
       className="stacking-cards relative py-20 px-4 md:px-8 lg:px-16"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 ">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-gray mb-6">
             Our Services
           </h2>

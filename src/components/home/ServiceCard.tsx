@@ -37,7 +37,7 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           </h2>
           
           {service.caseStudy && (
-            <div className="case-study-wrapper mb-6">
+            <div className="case-study-wrapper">
               <p className="small text-sm font-medium text-warm-gray uppercase tracking-wide mb-3">
                 {service.caseStudy.title}
               </p>

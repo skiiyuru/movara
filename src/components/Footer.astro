@@ -1,0 +1,136 @@
+---
+// Footer component with video background and newsletter signup
+import NewsletterSignup from './NewsletterSignup.tsx'
+---
+
+<footer id="footer" class="relative w-full bg-black text-white overflow-hidden rounded-t-3xl">
+  <!-- Video Background -->
+  <div class="video-wrapper cover loading absolute inset-0 w-full h-full">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      class="loaded w-full h-full object-cover opacity-100"
+      style="--height: 1080; --width: 1920;"
+    >
+      <source src="https://cdn.sanity.io/files/jxhrltjy/production/3d54271a5a963e3f195b619767795c87cf82b635.mp4" type="video/mp4" >
+    </video>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="relative z-10 w-full">
+    <!-- Middle Section -->
+    <div class="middle px-6 py-16 md:py-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Left Column - Logo -->
+          <div class="left">
+            <a href="/" class="logo inline-block" aria-label="Movara">
+              <h1 class="text-white font-black font-display text-5xl">Movara</h1>
+            </a>
+          </div>
+
+          <!-- Right Column - Navigation & Newsletter -->
+          <div class="right">
+            <!-- Navigation Links -->
+            <ul class="footer-nav mb-8 grid grid-cols-2 gap-4">
+              <li class="mb-4" style="--index:0;">
+                <a href="/work" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Work</a>
+              </li>
+              <li class="mb-4" style="--index:1;">
+                <a href="/latest" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Latest</a>
+              </li>
+              <li class="mb-4" style="--index:2;">
+                <a href="/people" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">People</a>
+              </li>
+              <li class="mb-4" style="--index:3;">
+                <a href="/contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Contact</a>
+              </li>
+              <li class="mb-4" style="--index:4;">
+                <a href="https://www.linkedin.com/company/movara/" rel="noopener noreferrer" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-2 font-display text-3xl">
+                  LinkedIn
+                  <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="fill" d="M0.899902 5.05844H9.8249L5.4449 0.648438H6.9449L11.8499 5.59844L6.9299 10.5484H5.4299L9.82621 6.13844H0.899902V5.05844Z" fill="white" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <!-- Newsletter Signup -->
+            <NewsletterSignup client:visible />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom px-6 py-8 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <p class="text-sm text-gray-400">
+            Copyright ©2025 - Movara
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+            <ul class="flex gap-4">
+              <li>
+                <a href="/legal/privacy-policy" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="flex gap-4">
+              <li>
+                <a href="http://milkshake.studio" target="_blank" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                  Site by Milkshake
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Footer specific styles */
+  .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Newsletter form styles */
+  .newsletter-signup input:focus {
+    outline: none;
+    border-color: white;
+  }
+
+  .newsletter-signup .error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .middle {
+      padding: 2rem 1.5rem;
+    }
+
+    .bottom {
+      padding: 1.5rem;
+    }
+  }
+</style>

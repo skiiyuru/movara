@@ -3,8 +3,23 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-  <h1 class="font-display text-4xl">Contact</h1>
-  <p class="text-lg">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-  </p>
+  <div class="container mx-auto">
+    <section class="grid gap-20 grid-cols-2 py-10">
+    <h1 class="font-display text-4xl">Contact</h1>
+    <div class="space-y-10 text-xl">
+      <p class="">
+        We’re here to help you reach your goals and drive meaningful change. Whether you have questions about our services, want to explore collaboration opportunities, or simply wish to share your thoughts, we’d love to hear from you!
+      </p>
+      <div>
+        <p class="text-gray-500">For general inquiries please email</p>
+        <a href="mailto:info@pvg.com">info@pvg.com</a>
+      </div>
+      <div>
+        <p class="text-gray-500">Office</p>
+        <p>+254 722 333 333</p>
+      </div>
+
+    </div>
+  </section>
+ </div>
 </BaseLayout>

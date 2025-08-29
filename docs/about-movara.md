@@ -1,4 +1,4 @@
-# About Movara Consulting
+## About Movara Consulting
 
 I founded Movara Consulting after spending years in the trenches of technology and corporate strategy. Working alongside boards and leadership teams to shape the future and deliver results. I've had a front-row seat to the concerns that weigh on leaders—questions about the longevity of their businesses and how to navigate growing uncertainty.
 

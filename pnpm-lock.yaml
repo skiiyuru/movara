@@ -27,8 +27,8 @@ importers:
         specifier: ^19.1.6
         version: 19.1.6(@types/react@19.1.8)
       astro:
-        specifier: ^5.10.1
-        version: 5.10.1(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.1)(typescript@5.8.3)(yaml@2.8.0)
+        specifier: ^5.13.4
+        version: 5.13.4(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.1)(typescript@5.8.3)(yaml@2.8.0)
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(prettier@3.6.1)(typescript@5.8.3)
@@ -146,8 +146,8 @@ packages:
   '@astrojs/compiler@2.12.2':
     resolution: {integrity: sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==}
 
-  '@astrojs/internal-helpers@0.6.1':
-    resolution: {integrity: sha512-l5Pqf6uZu31aG+3Lv8nl/3s4DbUzdlxTWDof4pEpto6GUJNhhCbelVi9dEyurOVyqaelwmS9oSyOWOENSfgo9A==}
+  '@astrojs/internal-helpers@0.7.2':
+    resolution: {integrity: sha512-KCkCqR3Goym79soqEtbtLzJfqhTWMyVaizUi35FLzgGSzBotSw8DB1qwsu7U96ihOJgYhDk2nVPz+3LnXPeX6g==}
 
   '@astrojs/language-server@2.15.4':
     resolution: {integrity: sha512-JivzASqTPR2bao9BWsSc/woPHH7OGSGc9aMxXL4U6egVTqBycB3ZHdBJPuOCVtcGLrzdWTosAqVPz1BVoxE0+A==}
@@ -161,8 +161,8 @@ packages:
       prettier-plugin-astro:
         optional: true
 
-  '@astrojs/markdown-remark@6.3.2':
-    resolution: {integrity: sha512-bO35JbWpVvyKRl7cmSJD822e8YA8ThR/YbUsciWNA7yTcqpIAL2hJDToWP5KcZBWxGT6IOdOkHSXARSNZc4l/Q==}
+  '@astrojs/markdown-remark@6.3.6':
+    resolution: {integrity: sha512-bwylYktCTsLMVoCOEHbn2GSUA3c5KT/qilekBKA3CBng0bo1TYjNZPr761vxumRk9kJGqTOtU+fgCAp5Vwokug==}
 
   '@astrojs/prism@3.3.0':
     resolution: {integrity: sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==}
@@ -1334,8 +1334,8 @@ packages:
   astro-seo@0.8.4:
     resolution: {integrity: sha512-Ou1vzQSXAxa0K8rtNtXNvSpYqOGEgMhh0immMxJeXmbVZac3UKCNWAoXWyOQDFYsZvBugCRSg0N1phBqPMVgCw==}
 
-  astro@5.10.1:
-    resolution: {integrity: sha512-DJVmt+51jU1xmgmAHCDwuUgcG/5aVFSU+tcX694acAZqPVt8EMUAmUZcJDX36Z7/EztnPph9HR3pm72jS2EgHQ==}
+  astro@5.13.4:
+    resolution: {integrity: sha512-Mgq5GYy3EHtastGXqdnh1UPuN++8NmJSluAspA5hu33O7YRs/em/L03cUfRXtc60l5yx5BfYJsjF2MFMlcWlzw==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3639,7 +3639,7 @@ snapshots:
 
   '@astrojs/compiler@2.12.2': {}
 
-  '@astrojs/internal-helpers@0.6.1': {}
+  '@astrojs/internal-helpers@0.7.2': {}
 
   '@astrojs/language-server@2.15.4(prettier@3.6.1)(typescript@5.8.3)':
     dependencies:
@@ -3666,9 +3666,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@astrojs/markdown-remark@6.3.2':
+  '@astrojs/markdown-remark@6.3.6':
     dependencies:
-      '@astrojs/internal-helpers': 0.6.1
+      '@astrojs/internal-helpers': 0.7.2
       '@astrojs/prism': 3.3.0
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.3
@@ -4819,7 +4819,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.15':
     dependencies:
-      '@babel/parser': 7.27.3
+      '@babel/parser': 7.28.0
       '@vue/shared': 3.5.15
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -4832,7 +4832,7 @@ snapshots:
 
   '@vue/compiler-sfc@3.5.15':
     dependencies:
-      '@babel/parser': 7.27.3
+      '@babel/parser': 7.28.0
       '@vue/compiler-core': 3.5.15
       '@vue/compiler-dom': 3.5.15
       '@vue/compiler-ssr': 3.5.15
@@ -4923,11 +4923,11 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@5.10.1(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.1)(typescript@5.8.3)(yaml@2.8.0):
+  astro@5.13.4(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.1)(typescript@5.8.3)(yaml@2.8.0):
     dependencies:
       '@astrojs/compiler': 2.12.2
-      '@astrojs/internal-helpers': 0.6.1
-      '@astrojs/markdown-remark': 6.3.2
+      '@astrojs/internal-helpers': 0.7.2
+      '@astrojs/markdown-remark': 6.3.6
       '@astrojs/telemetry': 3.3.0
       '@capsizecss/unpack': 2.4.0
       '@oslojs/encoding': 1.1.0
@@ -4970,6 +4970,7 @@ snapshots:
       rehype: 13.0.2
       semver: 7.7.2
       shiki: 3.4.2
+      smol-toml: 1.3.4
       tinyexec: 0.3.2
       tinyglobby: 0.2.14
       tsconfck: 3.1.6(typescript@5.8.3)
@@ -6229,8 +6230,8 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.27.3
-      '@babel/types': 7.27.3
+      '@babel/parser': 7.28.0
+      '@babel/types': 7.28.0
       source-map-js: 1.2.1
 
   markdown-table@3.0.4: {}

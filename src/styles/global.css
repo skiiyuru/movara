@@ -180,10 +180,12 @@
 @media (min-width: 768px) {
   .stacking-cards {
     min-height: 100vh;
+    height: 100vh;
   }
   
   .stacking-cards .relative {
     min-height: 100vh;
+    height: 100vh;
     position: relative;
   }
   
