@@ -4,11 +4,13 @@ import Intro from '@/components/home/Intro'
 import Services from '@/components/home/Services'
 import Testimonials from '@/components/home/Testimonials'
 import WhyMovara from '@/components/home/WhyMovara.astro'
+import WorkshopBooking from '@/components/home/WorkshopBooking'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-  <Hero client:load />
+  <!-- <Hero client:load /> -->
+  <WorkshopBooking client:visible />
   <Intro client:load />
   <Services client:visible />
   <Testimonials client:visible />

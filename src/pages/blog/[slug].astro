@@ -28,12 +28,16 @@ if (!slug || !post) {
 ---
 
 <BaseLayout title={`${title} | Movara`} description={description}>
-  <article class="bg-white text-slate-900">
-    <div class="container mx-auto py-12 px-6 md:px-8">
+  <article class="bg-white py-24 lg:py-32 border">
+    <div class="container-wide mx-auto ">
       <!-- Back Navigation -->
       <div class="mb-8">
-        <a href="/blog" class="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition">
-          <span aria-hidden="true">←</span>
+        <a href="/blog" class="inline-flex items-center gap-2 text-gray-500 hover:text-slate-900 transition">
+          <div class="bg-primary p-2 rounded group-hover:bg-secondary">
+            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1001 5.05844H2.1751L6.5551 0.648438H5.0551L0.1501 5.59844L5.0701 10.5484H6.5701L2.17379 6.13844H11.1001V5.05844Z" fill="white"></path>
+            </svg>
+          </div>
           <span>Back to Latest</span>
         </a>
       </div>
@@ -41,7 +45,7 @@ if (!slug || !post) {
       <!-- 2-Column Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
-        <!-- Content Column --><!-- Content Column -->
+        <!-- Content Column -->
         <div class="space-y-8">
           <!-- Header -->
           <header>
@@ -61,7 +65,7 @@ if (!slug || !post) {
           </header>
 
           <!-- Content -->
-          <div class="prose prose-lg prose-slate max-w-none [&>h1]:font-display [&>h1]:text-primary [&>h2]:font-display [&>h2]:text-primary [&>h3]:font-display [&>h3]:text-primary [&>h4]:font-display [&>h4]:text-primary [&>h5]:font-display [&>h5]:text-primary [&>h6]:font-display [&>h6]:text-primary [&>p]:font-sans [&>p]:text-slate-700 [&>strong]:font-semibold">
+          <div class="prose prose-lg prose-slate max-w-none [&>h1]:text-5xl [&>h1]:font-display [&>h1]:text-primary [&>h2]:text-4xl [&>h2]:font-display [&>h2]:text-primary [&>h3]:text-3xl [&>h3]:font-display [&>h3]:text-primary [&>h4]:text-2xl [&>h4]:font-display [&>h4]:text-primary [&>h5]:text-xl [&>h5]:font-display [&>h5]:text-primary [&>h6]:text-lg [&>h6]:font-display [&>h6]:text-primary [&>p]:font-sans [&>p]:text-slate-700 [&>strong]:font-semibold">
             <Content />
           </div>
         </div>

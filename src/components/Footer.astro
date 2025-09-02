@@ -22,13 +22,13 @@ import NewsletterSignup from './NewsletterSignup.tsx'
   <!-- Content Overlay -->
   <div class="relative z-10 w-full">
     <!-- Middle Section -->
-    <div class="middle px-6 py-16 md:py-24">
-      <div class="max-w-7xl mx-auto">
+    <div class="middle section">
+      <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <!-- Left Column - Logo -->
           <div class="left">
             <a href="/" class="logo inline-block" aria-label="Movara">
-              <h1 class="text-white font-black font-display text-5xl">Movara</h1>
+              <h1 class="text-white font-bold font-display text-4xl">Movara</h1>
             </a>
           </div>
 
@@ -37,19 +37,19 @@ import NewsletterSignup from './NewsletterSignup.tsx'
             <!-- Navigation Links -->
             <ul class="footer-nav mb-8 grid grid-cols-2 gap-4">
               <li class="mb-4" style="--index:0;">
-                <a href="/work" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Work</a>
+                <a href="/work" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-2xl">Work</a>
               </li>
               <li class="mb-4" style="--index:1;">
-                <a href="/latest" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Latest</a>
+                <a href="/latest" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-2xl">Latest</a>
               </li>
               <li class="mb-4" style="--index:2;">
-                <a href="/people" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">People</a>
+                <a href="/people" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-2xl">People</a>
               </li>
               <li class="mb-4" style="--index:3;">
-                <a href="/contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-3xl">Contact</a>
+                <a href="/contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-2xl">Contact</a>
               </li>
               <li class="mb-4" style="--index:4;">
-                <a href="https://www.linkedin.com/company/movara/" rel="noopener noreferrer" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-2 font-display text-3xl">
+                <a href="https://www.linkedin.com/company/movara/" rel="noopener noreferrer" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-2 font-display text-2xl">
                   LinkedIn
                   <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="fill" d="M0.899902 5.05844H9.8249L5.4449 0.648438H6.9449L11.8499 5.59844L6.9299 10.5484H5.4299L9.82621 6.13844H0.899902V5.05844Z" fill="white" />
@@ -67,7 +67,7 @@ import NewsletterSignup from './NewsletterSignup.tsx'
 
     <!-- Bottom Section -->
     <div class="bottom px-6 py-8 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto">
+      <div class="container">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p class="text-sm text-gray-400">
             Copyright ©2025 - Movara
@@ -115,10 +115,11 @@ import NewsletterSignup from './NewsletterSignup.tsx'
   .newsletter-signup input:focus {
     outline: none;
     border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
   }
 
   .newsletter-signup .error {
-    color: #ef4444;
+    color: var(--color-accent);
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
@@ -126,11 +127,11 @@ import NewsletterSignup from './NewsletterSignup.tsx'
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .middle {
-      padding: 2rem 1.5rem;
+      padding: var(--spacing-xl) var(--spacing-sm);
     }
 
     .bottom {
-      padding: 1.5rem;
+      padding: var(--spacing-md) var(--spacing-sm);
     }
   }
 </style>

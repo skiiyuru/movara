@@ -11,22 +11,6 @@ Based on the PVG website analysis, these guidelines establish the visual identit
 - **Results-driven**: Clear, impactful messaging focused on outcomes
 - **Client-centric**: Design that prioritizes user experience and client needs
 
-## Color Palette
-
-### Primary Colors
-- **Teal/Green**: `#38b2ac` - Success states and positive indicators
-- **Pure White**: `#ffffff` - Clean backgrounds and text contrast
-- **Light Gray**: `#f7fafc` - Subtle backgrounds and section dividers
-
-### Secondary Colors
-- **Warm Gray**: `#4a5568` - Secondary text and subtle accents
-- **Light Blue**: `#e6fffa` - Highlight backgrounds and call-to-action areas
-- **Dark Gray**: `#2d3748` - Headers and important text
-
-### Accent Colors
-- **Deep Navy Blue**: `#1a365d` - Primary brand color, conveys trust and professionalism
-- **Gold**: `#d69e2e` - Warning states and attention-grabbing elements
-
 ## Typography
 
 ### Font Hierarchy

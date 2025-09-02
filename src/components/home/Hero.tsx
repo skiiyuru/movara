@@ -14,12 +14,18 @@ export default function Hero() {
       animation: gsap.fromTo(
         svgRef.current,
         { scale: 1, opacity: 1 },
-        { scale: 50, transformOrigin: 'center center', duration: 1 },
+        {
+          scale: 35,
+          transformOrigin: 'center center',
+          duration: 1,
+          ease: 'back.out(1.7)',
+        },
       ),
       start: 'top top',
       end: 'bottom top',
-      scrub: 0.7,
+      scrub: 2.5,
       pin: true,
+      anticipatePin: 1,
     })
 
     return () => {

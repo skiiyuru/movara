@@ -22,42 +22,48 @@ export default function Intro() {
     // Set initial state - all words visible but faded
     gsap.set(words, { opacity: 0.2 })
 
-    // Create timeline for word-by-word animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 80%',
-        end: 'center center', // Animation completes when section reaches center
-        scrub: 0.1, // Much faster response to scroll
-      },
-    })
+    // Wait for the next frame to ensure Hero component is fully initialized
+    const initTimer = setTimeout(() => {
+      // Create timeline for word-by-word animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'center center',
+          scrub: 0.1,
+        },
+      })
 
-    // Animate each word to full opacity with smaller stagger
-    tl.to(words, {
-      opacity: 1,
-      duration: 0.1, // Faster duration
-      stagger: 0.005, // Much faster stagger for quick word reveal
-      ease: 'power2.out',
-    })
+      // Animate each word to full opacity with smaller stagger
+      tl.to(words, {
+        opacity: 1,
+        duration: 0.1,
+        stagger: 0.005,
+        ease: 'power2.out',
+      })
+    }, 50)
 
     return () => {
+      clearTimeout(initTimer)
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-32 mx-auto">
-      <div className="text-center px-4 md:px-18 lg:px-32">
-        <p
-          ref={paragraphRef}
-          className="text-5xl leading-tight font-display text-gray-700"
-        >
-          At Movara, we don't just talk strategy—we test it, challenge it,
-          and make it work in the real world. Our gaming-centered workshops—from
-          competitor wargaming to scenario planning—create a safe space to explore
-          what could happen before it does.
-        </p>
-      </div>
-    </section>
+    <div className="bg-white py-24 lg:py-32">
+      <section ref={sectionRef} className="container-wide mx-auto">
+        <div className="">
+          <h2
+            ref={paragraphRef}
+            className=" font-display"
+          >
+            At Movara, we don't just talk strategy—we test it, challenge it,
+            and make it work in the real world. Our gaming-centered workshops—from
+            competitor wargaming to scenario planning—create a safe space to explore
+            what could happen before it does.
+          </h2>
+        </div>
+      </section>
+    </div>
   )
 }

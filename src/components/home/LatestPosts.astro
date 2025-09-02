@@ -1,37 +1,80 @@
 ---
-import { formatPostDate, latestPosts } from '@/data/posts'
+import { formatPostDate, getLatestPosts } from '@/data/posts'
 
 type Props = {
   title?: string
   exploreHref?: string
+  theme?: 'light' | 'dark'
+  showDates?: boolean
+  maxPosts?: number
 }
 
-const { title = 'The Latest', exploreHref = '/blog' } = Astro.props
+const {
+  title = 'The Latest',
+  exploreHref = '/blog',
+  theme = 'light',
+  showDates = true,
+  maxPosts = 3,
+} = Astro.props
+
+const latestPosts = await getLatestPosts(maxPosts)
+
+const themeClasses = {
+  light: {
+    section: 'bg-white text-slate-900',
+    title: 'text-slate-500',
+    divider: 'divide-gray-200',
+    link: 'text-slate-700 hover:bg-slate-50',
+    date: 'text-slate-500',
+    arrow: 'text-slate-400 group-hover:text-slate-700',
+  },
+  dark: {
+    section: 'bg-primary text-white',
+    title: 'text-gray-300',
+    divider: 'divide-white/20',
+    link: 'text-white hover:bg-white/10',
+    date: 'text-gray-300',
+    arrow: 'text-gray-400 group-hover:text-white',
+  },
+}
+
+const classes = themeClasses[theme]
 ---
 
-<section class="bg-white text-slate-900">
-  <div class="container mx-auto py-16 px-6 md:px-8">
+<section class={`${classes.section}`}>
+  <div class="container-wide mx-auto py-24 lg:py-32">
     <div class="flex items-end justify-between mb-8">
-      <h2 class="uppercase tracking-widest text-slate-500 label">{title}</h2>
+      <p class={`text-sm font-semibold ${classes.title}`}>{title}</>
     </div>
 
-    <ul class="divide-y divide-gray-200">
+    <ul class={`divide-y ${classes.divider}`}>
       {latestPosts.map(post => (
         <li class="py-6 group">
-          <a href={post.url} class="flex items-center gap-4 sm:gap-8">
-            <span class="flex-1 text-xl md:text-2xl leading-snug group-hover:underline medium">{post.title}</span>
-            <span class="hidden md:block text-sm text-slate-500 whitespace-nowrap">{formatPostDate(post.date)}</span>
-            <span aria-hidden="true" class="ml-2 text-slate-400 group-hover:text-slate-700">→</span>
+          <a href={post.url} class={`flex items-center gap-4 sm:gap-8 ${classes.link} transition-colors duration-200`}>
+            <span class="flex-1 text-lg leading-snug group-hover:underline medium">{post.title}</span>
+            {showDates && (
+              <span class="hidden md:block text-sm whitespace-nowrap">{formatPostDate(post.date)}</span>
+            )}
+            <span aria-hidden="true" class={`ml-2 ${classes.arrow} transition-colors duration-200`}>→</span>
           </a>
         </li>
       ))}
     </ul>
 
-    <div class="mt-10">
-      <a href={exploreHref} class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50 transition">
-        <span>Explore More</span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+    {exploreHref && (
+      <div class="mt-10">
+        <a
+          href={exploreHref}
+          class={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors duration-200 ${
+          theme === 'light'
+            ? 'border-slate-300 text-slate-700 hover:bg-slate-50'
+            : 'border-white/20 text-white hover:bg-white/10'
+        }`}
+        >
+          <span>Explore More</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    )}
   </div>
 </section>

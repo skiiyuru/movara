@@ -187,35 +187,37 @@ export default function Services() {
   }, [])
 
   return (
-    <section 
-      ref={containerRef}
-      className="stacking-cards relative py-20 px-4 md:px-8 lg:px-16"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 ">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-gray mb-6">
-            Our Services
-          </h2>
-          <p className="text-xl text-warm-gray max-w-3xl mx-auto">
-            We equip tech-driven businesses to be future-ready through strategic planning, 
-            disciplined execution, and digital transformation.
-          </p>
-        </div>
+    <div className="bg-cream">
+      <section 
+        ref={containerRef}
+        className="stacking-cards relative py-20 px-4 md:px-8 lg:px-16"
+      >
+        <div className="container-wide mx-auto">
+          <div className="text-center mb-16 text-gray-700">
+            <h2 className="font-bold mb-6">
+              Our Services
+            </h2>
+            <p className="text-xl max-w-3xl mx-auto text-gray-600">
+              We equip tech-driven businesses to be future-ready through strategic planning, 
+              disciplined execution, and digital transformation.
+            </p>
+          </div>
 
-        <div className="relative">
-          {servicesData.map((service, index) => (
-            <div
-              key={service.id}
-              ref={(el) => {
-                cardsRef.current[index] = el
-              }}
-              className="stacked-card mb-8 md:mb-0"
-            >
-              <ServiceCard service={service} index={index} />
-            </div>
-          ))}
+          <div className="relative">
+            {servicesData.map((service, index) => (
+              <div
+                key={service.id}
+                ref={(el) => {
+                  cardsRef.current[index] = el
+                }}
+                className="stacked-card mb-8 md:mb-0"
+              >
+                <ServiceCard service={service} index={index} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 } 

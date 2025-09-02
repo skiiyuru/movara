@@ -2,19 +2,38 @@
 import { Image } from 'astro:assets'
 import LatestPosts from '@/components/home/LatestPosts.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
+
+const questions = [
+  {
+    question: 'How do we stay ahead when everything keeps changing?',
+    answer: 'Whether it\'s a new competitor with a different business model, or someone disrupting quietly at the edges with AI or digital solutions, you can feel the ground shifting beneath your feet. You know you need to respond faster and smarter.',
+  },
+  {
+    question: 'Our strategy looks good on paper—but will it hold up out there?',
+    answer: 'You\'ve got a solid plan, but you wonder if it\'s ready for market shifts, new technologies like AI, or if your team is fully aligned to execute when it counts.',
+  },
+  {
+    question: 'Are we missing something?',
+    answer: 'The toughest risks are the ones you don\'t see coming. Maybe it\'s a regulatory change, a technology shift, or a blind spot in your digital transformation plan. You\'re thinking about the future, but unsure how to make the right moves today.',
+  },
+  {
+    question: 'How do we keep growing without losing sight of what\'s coming next?',
+    answer: 'Growth feels good—but with AI reshaping industries, digital transformation accelerating, and regulatory landscapes shifting, you need to scale with confidence and stay ready for what\'s next.',
+  },
+];
 ---
 
 <BaseLayout>
  <section class="grid gap-20 py-10">
   <div class="container mx-auto">
     <!-- Our Mission -->
-    <h1 class="text-5xl leading-tight font-display text-gray-700 text-center mb-20">We equip tech-driven businesses<br >to be future-ready.</h1>
+    <h1 class="text-5xl leading-tight font-display text-gray-700 text-center mb-20">We equip tech-driven businesses<br>to be future-ready.</h1>
 
     <!-- CEO -->
     <div class="grid md:grid-cols-5">
       <div class="grid gap-4 md:col-span-2">
         <Image src="https://via.placeholder.com/500x600" alt="Founder & CEO" width={500} height={600} class="rounded-lg border-2" />
-        <h2 class="text-2xl font-bold font-display">Juddy Gichuru</h2>
+        <h3 class="font-bold text-primary">Juddy Gichuki</h3>
         <p>
           Founder & CEO
         </p>
@@ -48,46 +67,27 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
   </div>
 
   <!-- Solutions -->
-  <div class=" bg-primary rounded-t-4xl py-20">
+  <div class="bg-accent rounded-t-4xl py-20">
     <div class="container mx-auto grid grid-cols-2 border-b border-white/20 pb-20">
-      <h2 class="text-5xl font-bold text-white mb-6 font-display">Problems We Solve</h2>
+      <h2 class="text-5xl font-bold mb-6 font-display">Problems We Solve</h2>
 
-      <div class="space-y-8 ">
-        <p class="text-white mb-8">
+      <div class="space-y-8">
+        <p class="mb-8">
           We work with leaders who are asking:
         </p>
-        <div>
-          <h3 class="text-xl font-semibold text-white mb-3">"How do we stay ahead when everything keeps changing?"</h3>
-          <p class="text-white">
-            Whether it's a new competitor with a different business model, or someone disrupting quietly at the edges with AI or digital solutions, you can feel the ground shifting beneath your feet. You know you need to respond faster and smarter.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-white mb-3">"Our strategy looks good on paper—but will it hold up out there?"</h3>
-          <p class="text-white">
-            You've got a solid plan, but you wonder if it's ready for market shifts, new technologies like AI, or if your team is fully aligned to execute when it counts.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-white mb-3">"Are we missing something?"</h3>
-          <p class="text-white">
-            The toughest risks are the ones you don't see coming. Maybe it's a regulatory change, a technology shift, or a blind spot in your digital transformation plan. You're thinking about the future, but unsure how to make the right moves today.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-white mb-3">"How do we keep growing without losing sight of what's coming next?"</h3>
-          <p class="text-white">
-          Growth feels good—but with AI reshaping industries, digital transformation accelerating, and regulatory landscapes shifting, you need to scale with confidence and stay ready for what's next.
-          </p>
-        </div>
+        {questions.map(item => (
+          <div>
+            <h4 class="font-semibold mb-3">"{item.question}"</h4>
+            <p>
+              {item.answer}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 
   <!-- Latest posts -->
-  <LatestPosts />
+  <LatestPosts theme="light" />
  </section>
 </BaseLayout>
