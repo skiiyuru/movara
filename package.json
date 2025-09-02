@@ -14,6 +14,7 @@
     "@astrojs/react": "^4.3.0",
     "@fontsource-variable/hedvig-letters-serif": "^5.2.6",
     "@fontsource-variable/instrument-sans": "^5.2.6",
+    "@fontsource/arizonia": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

@@ -71,8 +71,8 @@ export default function Nav({ currentPath }: { currentPath: string }) {
       <nav className="transition-colors duration-500 bg-white border-b border-gray-200/50 z-50 relative" id="main-nav">
         <div className="container flex items-center justify-between h-20 px-4 md:px-6 lg:px-8 ">
         {/* Logo */}
-        <a href="/" className="flex-shrink-0 text-7xl font-bold transition-colors duration-500" aria-label="Movara">
-          <span id="nav-logo-text" className="">MOVARA</span>
+        <a href="/" className="flex-shrink-0 transition-colors duration-500" aria-label="Movara">
+          <span id="nav-logo-text" className="font-logo text-4xl font-bold">Movara</span>
         </a>
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex flex-1 justify-center items-center gap-12">

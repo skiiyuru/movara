@@ -129,3 +129,5 @@ export const servicesData = [
     },
   },
 ]
+
+export const workshopsData = []

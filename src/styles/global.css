@@ -4,6 +4,7 @@
 @theme {
   --font-display: 'Hedvig Letters Serif Variable', serif;
   --font-sans: 'Instrument Sans', sans-serif;
+  --font-logo: 'Arizonia', cursive;
   
   /* Brand Colors */
   --color-secondary: #d69e2e;
@@ -68,6 +69,11 @@ html {
   color: var(--color-gray-700);
 }
 
+/* Utility: Logo font */
+.font-logo {
+  font-family: var(--font-logo);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   /* font-weight: var(--font-weight-bold); */
@@ -83,7 +89,7 @@ h4 { font-size: var(--font-size-2xl); }
 /* p {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
-  color: var(--color-warm-gray);
+  color: #6B7280;
   margin-bottom: var(--spacing-sm);
 } */
 
@@ -91,11 +97,10 @@ h4 { font-size: var(--font-size-2xl); }
 #nav-logo-text {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-lg);
 }
 
 .menu-open #nav-logo-text {
-  color: var(--color-pure-white);
+  color: white;
 }
 
 #menu-btn {
@@ -111,13 +116,13 @@ h4 { font-size: var(--font-size-2xl); }
 }
 
 .menu-open #menu-btn {
-  background: var(--color-pure-white);
+  background: white;
 }
 
 .nav-icon rect,
 .nav-icon line {
-  stroke: var(--color-pure-white);
-  fill: var(--color-pure-white);
+  stroke: white;
+  fill: white;
   transition: var(--transition-normal);
 }
 
@@ -135,7 +140,7 @@ h4 { font-size: var(--font-size-2xl); }
 
 #main-nav a {
   color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-base);
   transition: var(--transition-normal);
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -144,28 +149,28 @@ h4 { font-size: var(--font-size-2xl); }
 
 #main-nav a:hover {
   color: var(--color-primary);
-  background-color: var(--color-light-blue);
+  background-color: #DBEAFE;
   transform: translateY(-1px);
 }
 
 #main-nav a[aria-current="page"] {
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  background-color: var(--color-light-blue);
+  background-color: #DBEAFE;
 }
 
 .menu-open #main-nav a {
-  color: var(--color-pure-white);
+  color: white;
 }
 
 .menu-open #main-nav a:hover {
-  color: var(--color-pure-white);
+  color: white;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .menu-open #main-nav a[aria-current="page"] {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-pure-white);
+  color: white;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -258,12 +263,12 @@ h4 { font-size: var(--font-size-2xl); }
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: var(--color-pure-white);
+  color: white;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-dark-gray);
+  background-color: #1F2937;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -276,14 +281,14 @@ h4 { font-size: var(--font-size-2xl); }
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
-  color: var(--color-pure-white);
+  color: white;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 /* Card Styles */
 .card {
-  background: var(--color-pure-white);
+  background: white;
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-md);
@@ -301,11 +306,11 @@ h4 { font-size: var(--font-size-2xl); }
 .form-input {
   width: 100%;
   padding: var(--spacing-sm);
-  border: 1px solid var(--color-warm-gray);
+  border: 1px solid #D1D5DB;
   border-radius: var(--radius-sm);
   font-size: var(--font-size-base);
   transition: var(--transition-normal);
-  background-color: var(--color-pure-white);
+  background-color: white;
 }
 
 .form-input:focus {
@@ -424,7 +429,7 @@ h4 { font-size: var(--font-size-2xl); }
 
 /* Services Section Styles */
 /* .stacking-cards {
-  background: var(--color-light-gray);
+  background: #F3F4F6;
 } */
 
 .stacked-card {
