@@ -50,7 +50,7 @@ const categories = [...new Set(allPostsForDropdown.map(p => p.data.category))]
             </a>
             <div class="mt-3">
               <div class="mb-2">
-                <span class="inline-block rounded-full bg-accent text-slate-700 px-3 py-1">{post.data.category}</span>
+                <span class="inline-block rounded-full bg-accent text-slate-700 px-3 py-1 text-xs sm:text-sm">{post.data.category}</span>
               </div>
               <h4 class="">
                 <a href={`/blog/${post.slug}`} class="hover:underline">{post.data.title}</a>

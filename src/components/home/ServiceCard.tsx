@@ -19,7 +19,7 @@ export default function ServiceCard(props) {
       <div className="flex flex-col lg:flex-row-reverse">
         {/* Media Section */}
         <div className="lg:w-1/2">
-          <div className="h-56 sm:h-72 md:h-80 lg:h-full w-full">
+          <div className="h-48 sm:h-56 md:h-72 lg:h-full w-full">
             <img
               src={fallbackImage}
               alt={service.title || 'Service image'}
@@ -31,11 +31,11 @@ export default function ServiceCard(props) {
         </div>
 
         {/* Content Section */}
-        <div className="lg:w-1/2 p-8 lg:p-12">
-          <h2 className="text-3xl lg:text-4xl mb-6 text-gray-700">
+        <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 xl:p-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-4 sm:mb-6 text-gray-700 font-semibold leading-tight">
             {service.title}
           </h2>
-          <p className="text-xl leading-relaxed mb-6 text-gray-700">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6 text-gray-700">
             {service.description}
           </p>
           {service.caseStudy && (

@@ -42,18 +42,18 @@ const classes = themeClasses[theme]
 ---
 
 <section class={`${classes.section}`}>
-  <div class="container-wide mx-auto py-24 lg:py-32">
-    <div class="flex items-end justify-between mb-8">
-      <p class={`text-sm font-semibold ${classes.title}`}>{title}</>
+  <div class="container-wide mx-auto py-16 sm:py-20 lg:py-24 xl:py-32 px-4 sm:px-6">
+    <div class="flex items-end justify-between mb-6 sm:mb-8">
+      <p class={`text-xs sm:text-sm font-semibold ${classes.title}`}>{title}</p>
     </div>
 
     <ul class={`divide-y ${classes.divider}`}>
       {latestPosts.map(post => (
-        <li class="py-6 group">
-          <a href={post.url} class={`flex items-center gap-4 sm:gap-8 ${classes.link} transition-colors duration-200`}>
-            <span class="flex-1 text-lg leading-snug group-hover:underline medium">{post.title}</span>
+        <li class="py-4 sm:py-6 group">
+          <a href={post.url} class={`flex items-center gap-3 sm:gap-4 md:gap-8 ${classes.link} transition-colors duration-200`}>
+            <span class="flex-1 text-base sm:text-lg leading-snug group-hover:underline font-medium">{post.title}</span>
             {showDates && (
-              <span class="hidden md:block text-sm whitespace-nowrap">{formatPostDate(post.date)}</span>
+              <span class="hidden md:block text-xs sm:text-sm whitespace-nowrap">{formatPostDate(post.date)}</span>
             )}
             <span aria-hidden="true" class={`ml-2 ${classes.arrow} transition-colors duration-200`}>→</span>
           </a>
@@ -62,10 +62,10 @@ const classes = themeClasses[theme]
     </ul>
 
     {exploreHref && (
-      <div class="mt-10">
+      <div class="mt-8 sm:mt-10">
         <a
           href={exploreHref}
-          class={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors duration-200 ${
+          class={`inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border transition-colors duration-200 text-sm sm:text-base min-h-[44px] ${
           theme === 'light'
             ? 'border-slate-300 text-slate-700 hover:bg-slate-50'
             : 'border-white/20 text-white hover:bg-white/10'

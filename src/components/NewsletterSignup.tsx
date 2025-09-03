@@ -79,11 +79,11 @@ export default function NewsletterSignup({ className = '' }: NewsletterSignupPro
 
   return (
     <div className={`newsletter-signup ${className}`}>
-      <p className="text-sm mb-4 text-gray-300">
+      <p className="text-xs sm:text-sm mb-3 sm:mb-4 text-gray-300">
         Join our mailing list and stay connected to our work
       </p>
-      <form onSubmit={handleSubmit} className="on-dark grid grid-cols-2 gap-2">
-        <div className="input-group mb-4 ">
+      <form onSubmit={handleSubmit} className="on-dark grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
+        <div className="input-group mb-3 sm:mb-4">
           <input 
             type="text" 
             id="name" 
@@ -92,18 +92,18 @@ export default function NewsletterSignup({ className = '' }: NewsletterSignupPro
             required 
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-transparent border text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors duration-200 ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors duration-200 text-sm sm:text-base min-h-[44px] ${
               errors.name ? 'border-red-500' : 'border-gray-600'
             }`}
           />
           <label htmlFor="name" className="sr-only">Full Name</label>
           {errors.name && (
             <div className="error mt-2">
-              <p className="text-red-400 text-sm">{errors.name}</p>
+              <p className="text-red-400 text-xs sm:text-sm">{errors.name}</p>
             </div>
           )}
         </div>
-        <div className="input-group mb-4">
+        <div className="input-group mb-3 sm:mb-4">
           <input 
             type="email" 
             id="email" 
@@ -112,7 +112,7 @@ export default function NewsletterSignup({ className = '' }: NewsletterSignupPro
             required 
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 bg-transparent border text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors duration-200 ${
+            className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors duration-200 text-sm sm:text-base min-h-[44px] ${
               errors.email ? 'border-red-500' : 'border-gray-600'
             }`}
             style={{
@@ -126,14 +126,14 @@ export default function NewsletterSignup({ className = '' }: NewsletterSignupPro
           <label htmlFor="email" className="sr-only">Email</label>
           {errors.email && (
             <div className="error mt-2">
-              <p className="text-red-400 text-sm">{errors.email}</p>
+              <p className="text-red-400 text-xs sm:text-sm">{errors.email}</p>
             </div>
           )}
         </div>
         <button 
           type="submit"
           disabled={!isFormValid || isSubmitting}
-          className="w-fit button primary icon-arrow icon dark bg-white text-black px-6 py-3 flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-fit button primary icon-arrow icon dark bg-white text-black px-4 sm:px-6 py-2 sm:py-3 flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base min-h-[44px]"
         >
           <span>{isSubmitting ? 'Signing Up...' : 'Sign Up'}</span>
           <div className="icon">

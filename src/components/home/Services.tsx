@@ -190,14 +190,14 @@ export default function Services() {
     <div className="bg-cream">
       <section 
         ref={containerRef}
-        className="stacking-cards relative py-20 px-4 md:px-8 lg:px-16"
+        className="stacking-cards relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-16"
       >
         <div className="container-wide mx-auto">
-          <div className="text-center mb-16 text-gray-700">
-            <h2 className="font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16 text-gray-700">
+            <h2 className="font-bold mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl">
               Our Services
             </h2>
-            <p className="text-xl max-w-3xl mx-auto text-gray-600">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-600 px-4">
               We equip tech-driven businesses to be future-ready through strategic planning, 
               disciplined execution, and digital transformation.
             </p>
@@ -210,7 +210,7 @@ export default function Services() {
                 ref={(el) => {
                   cardsRef.current[index] = el
                 }}
-                className="stacked-card mb-8 md:mb-0"
+                className="stacked-card mb-6 sm:mb-8 md:mb-0"
               >
                 <ServiceCard service={service} index={index} />
               </div>

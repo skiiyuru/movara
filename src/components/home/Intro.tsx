@@ -50,12 +50,12 @@ export default function Intro() {
   }, [])
 
   return (
-    <div className="bg-white py-24 lg:py-32">
-      <section ref={sectionRef} className="container-wide mx-auto">
+    <div className="bg-white py-16 sm:py-20 lg:py-24 xl:py-32">
+      <section ref={sectionRef} className="container-wide mx-auto px-4 sm:px-6">
         <div className="">
           <h2
             ref={paragraphRef}
-            className=" font-display"
+            className="font-display text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-tight lg:leading-tight"
           >
             At Movara, we don't just talk strategy—we test it, challenge it,
             and make it work in the real world. Our gaming-centered workshops—from

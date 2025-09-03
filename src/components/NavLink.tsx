@@ -14,7 +14,7 @@ export default function NavLink({ href, title, className = '', currentPath }: { 
   return (
     <a
       href={href}
-      className={`font-medium transition-colors duration-300 ${
+      className={`font-medium transition-colors duration-300 text-sm sm:text-base min-h-[44px] flex items-center ${
         isActive ? 'font-bold' : ''
       } ${className}`}
       aria-current={isActive ? 'page' : undefined}

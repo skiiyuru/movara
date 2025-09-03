@@ -12,16 +12,16 @@
   --color-accent: #DBEAFE;
   --color-cream: #E3DBD9;
   
-   /* Typography Scale */
-   --font-size-xs: 0.875rem; /* 14px - Captions and metadata */
-   --font-size-sm: 1rem; /* 16px - Body text */
+   /* Typography Scale - Mobile First */
+   --font-size-xs: 0.75rem; /* 12px - Captions and metadata */
+   --font-size-sm: 0.875rem; /* 14px - Small text */
    --font-size-base: 1rem; /* 16px - Body text */
-   --font-size-lg: 1.5rem; /* 24px - H4 */
-   --font-size-xl: 2rem; /* 32px - H3 */
-   --font-size-2xl: 2.5rem; /* 40px - H2 */
-   --font-size-3xl: 2.5rem; /* 40px - H2 */
-   --font-size-4xl: 3.5rem; /* 56px - H1 */
-   --font-size-5xl: 3.5rem; /* 56px - H1 */
+   --font-size-lg: 1.125rem; /* 18px - Large body */
+   --font-size-xl: 1.25rem; /* 20px - H4 */
+   --font-size-2xl: 1.5rem; /* 24px - H3 */
+   --font-size-3xl: 1.875rem; /* 30px - H2 */
+   --font-size-4xl: 2.25rem; /* 36px - H1 */
+   --font-size-5xl: 3rem; /* 48px - Large H1 */
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -76,22 +76,14 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  /* font-weight: var(--font-weight-bold); */
   line-height: 1.2;
-  /* color: var(--color-primary); */
 }
 
-h1 { font-size: var(--font-size-5xl); }
-h2 { font-size: var(--font-size-4xl); }
-h3 { font-size: var(--font-size-3xl); }
-h4 { font-size: var(--font-size-2xl); }
-
-/* p {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  color: #6B7280;
-  margin-bottom: var(--spacing-sm);
-} */
+/* Mobile-first typography scaling */
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
 
 /* Navigation Component Styles */
 #nav-logo-text {
@@ -108,6 +100,8 @@ h4 { font-size: var(--font-size-2xl); }
   border-radius: var(--radius-sm);
   transition: var(--transition-normal);
   padding: var(--spacing-xs) var(--spacing-sm);
+  min-width: 3rem; /* 48px for touch targets */
+  min-height: 3rem; /* 48px for touch targets */
 }
 
 #menu-btn:hover {
@@ -145,6 +139,9 @@ h4 { font-size: var(--font-size-2xl); }
   transition: var(--transition-normal);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
+  min-height: 2.5rem; /* 40px for touch targets */
+  display: flex;
+  align-items: center;
 }
 
 #main-nav a:hover {
@@ -259,6 +256,7 @@ h4 { font-size: var(--font-size-2xl); }
   cursor: pointer;
   border: none;
   min-height: 3rem; /* 48px for touch targets */
+  min-width: 3rem; /* 48px for touch targets */
 }
 
 .btn-primary {
@@ -300,8 +298,6 @@ h4 { font-size: var(--font-size-2xl); }
   box-shadow: var(--shadow-xl);
 }
 
-
-
 /* Form Styles */
 .form-input {
   width: 100%;
@@ -311,6 +307,7 @@ h4 { font-size: var(--font-size-2xl); }
   font-size: var(--font-size-base);
   transition: var(--transition-normal);
   background-color: white;
+  min-height: 3rem; /* 48px for touch targets */
 }
 
 .form-input:focus {
@@ -333,65 +330,96 @@ h4 { font-size: var(--font-size-2xl); }
 .container {
   max-width: var(--container-wide);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
 }
 
 .container-wide {
   max-width: var(--container-wide);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
 }
 
 .container-narrow {
   max-width: var(--container-narrow);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
 }
 
 .container-tight {
   max-width: var(--container-tight);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
 }
 
 /* Section Spacing */
 .section {
-  padding: var(--spacing-2xl) 0;
-}
-
-.section-sm {
   padding: var(--spacing-xl) 0;
 }
 
-.section-lg {
-  padding: calc(var(--spacing-2xl) * 2) 0;
+.section-sm {
+  padding: var(--spacing-lg) 0;
 }
 
-/* Mobile styles - normal layout */
+.section-lg {
+  padding: calc(var(--spacing-xl) * 2) 0;
+}
+
+/* Mobile styles - base layout */
 @media (max-width: 767px) {
-  h1 { font-size: var(--font-size-4xl); }
-  h2 { font-size: var(--font-size-3xl); }
-  h3 { font-size: var(--font-size-2xl); }
-  
-  .container {
+  .container,
+  .container-wide,
+  .container-narrow,
+  .container-tight {
     padding: 0 var(--spacing-sm);
   }
+  
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-sm {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-xl) 0;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container,
+  .container-wide,
+  .container-narrow,
+  .container-tight {
+    padding: 0 var(--spacing-md);
+  }
+  
+  h1 { font-size: var(--font-size-5xl); }
+  h2 { font-size: calc(var(--font-size-4xl) * 1.1); }
+  h3 { font-size: calc(var(--font-size-3xl) * 1.05); }
   
   .section {
     padding: var(--spacing-xl) 0;
   }
 }
 
-
-
-/* Tablet styles */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    padding: 0 var(--spacing-md);
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .container,
+  .container-wide,
+  .container-narrow,
+  .container-tight {
+    padding: 0 var(--spacing-lg);
   }
   
-  h1 { font-size: calc(var(--font-size-5xl) * 0.9); }
-  h2 { font-size: calc(var(--font-size-4xl) * 0.9); }
+  h1 { font-size: var(--font-size-5xl); }
+  h2 { font-size: var(--font-size-4xl); }
+  h3 { font-size: var(--font-size-3xl); }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
 }
 
 /* Accessibility */
@@ -428,15 +456,10 @@ h4 { font-size: var(--font-size-2xl); }
 }
 
 /* Services Section Styles */
-/* .stacking-cards {
-  background: #F3F4F6;
-} */
-
 .stacked-card {
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 /* Mobile styles - normal layout */
 @media (max-width: 767px) {
@@ -468,5 +491,35 @@ h4 { font-size: var(--font-size-2xl); }
     height: 70%;
     transform-origin: center top;
     will-change: transform;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 767px) {
+  /* Improve touch targets */
+  button, a, input, select {
+    min-height: 2.75rem; /* 44px minimum for touch */
+  }
+  
+  /* Better spacing for mobile */
+  .py-24 {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+  
+  .py-32 {
+    padding-top: var(--font-size-xl);
+    padding-bottom: var(--font-size-xl);
+  }
+  
+  /* Improve form elements on mobile */
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Better button sizing */
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
   }
 }

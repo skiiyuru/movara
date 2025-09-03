@@ -69,31 +69,31 @@ export default function Nav({ currentPath }: { currentPath: string }) {
     <header id="header" ref={headerRef} className="w-full sticky top-0 z-50">
       {/* Nav Bar (always visible, z-50) */}
       <nav className="transition-colors duration-500 bg-white border-b border-gray-200/50 z-50 relative" id="main-nav">
-        <div className="container flex items-center justify-between h-20 px-4 md:px-6 lg:px-8 ">
+        <div className="container flex items-center justify-between h-16 sm:h-20 px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Logo */}
         <a href="/" className="flex-shrink-0 transition-colors duration-500" aria-label="Movara">
-          <span id="nav-logo-text" className="font-logo text-4xl font-bold">Movara</span>
+          <span id="nav-logo-text" className="font-display tracking-tight text-2xl sm:text-3xl lg:text-4xl font-bold">Movara</span>
         </a>
         {/* Desktop Nav Links */}
-        <ul className="hidden md:flex flex-1 justify-center items-center gap-12">
+        <ul className="hidden md:flex flex-1 justify-center items-center gap-8 lg:gap-12">
           <li><NavLink href="/about" title="About" currentPath={currentPath} /></li>
           <li><NavLink href="/contact" title="Contact" currentPath={currentPath} /></li>
           <li><NavLink href="/blog" title="Latest" currentPath={currentPath} /></li>
         </ul>
         {/* Menu/Close Button */}
-        <button 
+        <button
           ref={menuBtnRef}
           id="menu-btn" 
           aria-label="Open menu" 
-          className="ml-auto flex items-center justify-center w-12 h-12 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+          className="ml-auto flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
           onClick={handleMenuClick}
         >
           <span className="sr-only">Open menu</span>
           <svg 
             ref={menuIconRef}
             id="menu-icon" 
-            width="24" 
-            height="24" 
+            width="20" 
+            height="20" 
             fill="none" 
             viewBox="0 0 24 24" 
             className={`block nav-icon ${isOpen ? 'hidden' : ''}`}
@@ -104,8 +104,8 @@ export default function Nav({ currentPath }: { currentPath: string }) {
           <svg 
             ref={closeIconRef}
             id="close-icon" 
-            width="24" 
-            height="24" 
+            width="20" 
+            height="20" 
             fill="none" 
             viewBox="0 0 24 24" 
             className={`nav-icon ${isOpen ? '' : 'hidden'}`}
@@ -151,11 +151,15 @@ export default function Nav({ currentPath }: { currentPath: string }) {
           <LatestPostsNav title="The Latest" maxPosts={3} />
         </div>
         {/* Mobile layout */}
-        <div className="flex md:hidden flex-col h-full pt-20">
+        <div className="flex md:hidden flex-col h-full pt-16 sm:pt-20">
           <div className="flex-1"></div>
-          <ul className="flex flex-col space-y-6 text-2xl font-display px-6 pb-12">
-            <li className="overlay-link"><NavLink href="/about" title="About" currentPath={currentPath} /></li>
-            <li className="overlay-link"><NavLink href="/blog" title="Latest" currentPath={currentPath} /></li>
+          <ul className="flex flex-col space-y-4 sm:space-y-6 text-xl sm:text-2xl font-display px-4 sm:px-6 pb-8 sm:pb-12">
+            <li className="overlay-link">
+              <a href="/about" className="hover:underline text-white transition-colors duration-200">About</a>
+            </li>
+            <li className="overlay-link">
+              <a href="/blog" className="hover:underline text-white transition-colors duration-200">Latest</a>
+            </li>
             <li className="overlay-link">
               <a href="/contact" className="hover:underline text-white transition-colors duration-200">Contact</a>
             </li>

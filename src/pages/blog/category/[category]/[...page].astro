@@ -29,10 +29,10 @@ const categories = [...new Set(allPostsForDropdown.map(p => p.data.category))]
   title={`The Latest | ${category}`}
   description={`All posts for ${category} category`}
 >
-  <section class="bg-white text-slate-900">
-    <div class="container mx-auto py-12 px-6 md:px-8">
+  <section class="bg-white py-24 lg:py-32">
+    <div class="container-wide mx-auto">
       <div class="flex items-center justify-between mb-8">
-        <h2 class="text-4xl md:text-5xl font-display text-primary">The Latest</h2>
+        <h3 class="text-4xl md:text-5xl font-display text-primary">The Latest</h3>
 
         <div>
           <label for="category-select" class="sr-only">Filter by category</label>
@@ -57,11 +57,11 @@ const categories = [...new Set(allPostsForDropdown.map(p => p.data.category))]
             </a>
             <div class="mt-3">
               <div class="mb-2">
-                <span class="inline-block rounded-full bg-slate-100 text-slate-700 text-xs px-3 py-1">{post.data.category}</span>
+                <span class="inline-block rounded-full bg-accent text-slate-700 px-3 py-1 text-xs sm:text-sm">{post.data.category}</span>
               </div>
-              <h2 class="text-xl md:text-2xl leading-snug">
+              <h4 class="">
                 <a href={`/blog/${post.slug}`} class="hover:underline">{post.data.title}</a>
-              </h2>
+              </h4>
             </div>
           </article>
         ))}

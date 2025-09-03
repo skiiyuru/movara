@@ -50,15 +50,15 @@ export default function LatestPostsNav({
 
   if (loading) {
     return (
-      <div className="flex-[2] flex flex-col justify-end p-16 articles-wrapper h-full">
-        <span className="uppercase text-gray-300 tracking-widest mb-6 text-sm font-medium">{title}</span>
-        <div className="space-y-6 articles">
+      <div className="flex-[2] flex flex-col justify-end p-8 sm:p-12 lg:p-16 articles-wrapper h-full">
+        <span className="uppercase text-gray-300 tracking-widest mb-4 sm:mb-6 text-xs sm:text-sm font-medium">{title}</span>
+        <div className="space-y-4 sm:space-y-6 articles">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className={`border-b border-white/20 pb-4 mb-4 article-list-item ${i === 2 ? 'border-b-0' : ''}`}>
-              <div className="flex items-center gap-4 sm:gap-8 animate-pulse">
-                <div className="flex-1 h-6 bg-white/20 rounded"></div>
-                {showDates && <div className="hidden md:block h-4 bg-white/10 rounded w-24"></div>}
-                <div className="h-4 bg-white/10 rounded w-4"></div>
+            <div key={i} className={`border-b border-white/20 pb-3 sm:pb-4 mb-3 sm:mb-4 article-list-item ${i === 2 ? 'border-b-0' : ''}`}>
+              <div className="flex items-center gap-3 sm:gap-4 md:gap-8 animate-pulse">
+                <div className="flex-1 h-5 sm:h-6 bg-white/20 rounded"></div>
+                {showDates && <div className="hidden md:block h-3 sm:h-4 bg-white/10 rounded w-20 sm:w-24"></div>}
+                <div className="h-3 sm:h-4 bg-white/10 rounded w-3 sm:w-4"></div>
               </div>
             </div>
           ))}
@@ -68,15 +68,15 @@ export default function LatestPostsNav({
   }
 
   return (
-    <div className="flex-[2] flex flex-col justify-end p-16 articles-wrapper h-full">
-      <span className="uppercase text-gray-300 tracking-widest mb-6 text-sm font-medium">{title}</span>
-      <div className="space-y-6 articles">
+    <div className="flex-[2] flex flex-col justify-end p-8 sm:p-12 lg:p-16 articles-wrapper h-full">
+      <span className="uppercase text-gray-300 tracking-widest mb-4 sm:mb-6 text-xs sm:text-sm font-medium">{title}</span>
+      <div className="space-y-4 sm:space-y-6 articles">
         {posts.map((post, index) => (
-          <div key={post.slug} className={`article-list-item overlay-link ${index < posts.length - 1 ? 'border-b border-white/20 pb-4 mb-4' : ''}`}>
-            <a href={post.url} className="flex items-center gap-4 sm:gap-8 group">
-              <span className="flex-1 text-xl font-medium group-hover:underline transition-colors duration-200">{post.title}</span>
+          <div key={post.slug} className={`article-list-item overlay-link ${index < posts.length - 1 ? 'border-b border-white/20 pb-3 sm:pb-4 mb-3 sm:mb-4' : ''}`}>
+            <a href={post.url} className="flex items-center gap-3 sm:gap-4 md:gap-8 group">
+              <span className="flex-1 text-lg sm:text-xl font-medium group-hover:underline transition-colors duration-200">{post.title}</span>
               {showDates && (
-                <span className="hidden md:block text-sm text-gray-300 whitespace-nowrap">{formatPostDate(post.date)}</span>
+                <span className="hidden md:block text-xs sm:text-sm text-gray-300 whitespace-nowrap">{formatPostDate(post.date)}</span>
               )}
               <span aria-hidden="true" className="text-gray-400 group-hover:text-white transition-colors duration-200">→</span>
             </a>
