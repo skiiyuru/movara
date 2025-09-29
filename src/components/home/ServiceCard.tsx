@@ -21,7 +21,7 @@ export default function ServiceCard(props) {
         <div className="lg:w-1/2">
           <div className="h-48 sm:h-56 md:h-72 lg:h-full w-full">
             <img
-              src={fallbackImage}
+              src={service.image}
               alt={service.title || 'Service image'}
               className="h-full w-full object-cover"
               loading="lazy"

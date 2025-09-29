@@ -1,25 +1,24 @@
 ---
+import ContactForm from '@/components/ContactForm.tsx'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
   <div class="bg-accent py-24 lg:py-32">
     <section class="container-wide mx-auto grid gap-20 grid-cols-1 lg:grid-cols-2 ">
-    <h1 class="font-display text-4xl">Contact</h1>
-    <div class="space-y-10 text-xl">
-      <p class="">
-        We’re here to help you reach your goals and drive meaningful change. Whether you have questions about our services, want to explore collaboration opportunities, or simply wish to share your thoughts, we’d love to hear from you!
-      </p>
-      <div>
-        <p class="text-gray-500">For general inquiries please email</p>
-        <a href="mailto:info@pvg.com">info@pvg.com</a>
-      </div>
-      <div>
-        <p class="text-gray-500">Office</p>
-        <p>+254 722 333 333</p>
+      <div class="space-y-5">
+        <h1 class="font-display text-4xl">Contact</h1>
+        <p class="text-gray-600 text-base">
+          We're here to help you reach your goals and drive meaningful change. Whether you have questions about our services, want to explore collaboration opportunities, or simply wish to share your thoughts, we'd love to hear from you
+        </p>
+        <a href="https://calendly.com/jmgichuki/30min" target="_blank" class="py-3 px-6 rounded-lg font-medium transition-all duration-200 transform bg-primary text-base text-white hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98]">
+          Book free consultation
+        </a>
       </div>
 
-    </div>
+      <div>
+        <ContactForm client:load />
+      </div>
   </section>
  </div>
 </BaseLayout>

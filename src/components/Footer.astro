@@ -1,6 +1,6 @@
 ---
 // Footer component with video background and newsletter signup
-import NewsletterSignup from './NewsletterSignup.tsx'
+// import NewsletterSignup from './NewsletterSignup.tsx'
 ---
 
 <footer id="footer" class="relative w-full bg-black text-white overflow-hidden rounded-t-3xl">
@@ -15,9 +15,11 @@ import NewsletterSignup from './NewsletterSignup.tsx'
       class="loaded w-full h-full object-cover opacity-100"
       style="--height: 1080; --width: 1920;"
     >
-      <source src="https://cdn.sanity.io/files/jxhrltjy/production/3d54271a5a963e3f195b619767795c87cf82b635.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/3245638/3245638-uhd_2560_1440_25fps.mp4" type="video/mp4" >
     </video>
   </div>
+
+
 
   <!-- Content Overlay -->
   <div class="relative z-10 w-full">
@@ -37,20 +39,17 @@ import NewsletterSignup from './NewsletterSignup.tsx'
             <!-- Navigation Links -->
             <ul class="footer-nav mb-6 lg:mb-8 grid grid-cols-2 gap-3 sm:gap-4">
               <li class="mb-3 sm:mb-4" style="--index:0;">
-                <a href="/work" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-lg sm:text-xl lg:text-2xl">Work</a>
+                <a href="/about" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-lg sm:text-xl lg:text-2xl">About</a>
               </li>
               <li class="mb-3 sm:mb-4" style="--index:1;">
                 <a href="/latest" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-lg sm:text-xl lg:text-2xl">Latest</a>
-              </li>
-              <li class="mb-3 sm:mb-4" style="--index:2;">
-                <a href="/people" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-lg sm:text-xl lg:text-2xl">People</a>
               </li>
               <li class="mb-3 sm:mb-4" style="--index:3;">
                 <a href="/contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-display text-lg sm:text-xl lg:text-2xl">Contact</a>
               </li>
               <li class="mb-3 sm:mb-4" style="--index:4;">
-                <a href="https://www.linkedin.com/company/movara/" rel="noopener noreferrer" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-2 font-display text-lg sm:text-xl lg:text-2xl">
-                  LinkedIn
+                <a href="https://calendly.com/jmgichuki/30min" rel="noopener noreferrer" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-2 font-display text-lg sm:text-xl lg:text-2xl">
+                  Book Consultation
                   <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="fill" d="M0.899902 5.05844H9.8249L5.4449 0.648438H6.9449L11.8499 5.59844L6.9299 10.5484H5.4299L9.82621 6.13844H0.899902V5.05844Z" fill="white" />
                   </svg>
@@ -59,7 +58,7 @@ import NewsletterSignup from './NewsletterSignup.tsx'
             </ul>
 
             <!-- Newsletter Signup -->
-            <NewsletterSignup client:visible />
+            <!-- <NewsletterSignup client:visible /> -->
           </div>
         </div>
       </div>
@@ -69,21 +68,21 @@ import NewsletterSignup from './NewsletterSignup.tsx'
     <div class="bottom px-4 sm:px-6 py-6 sm:py-8 border-t border-gray-800">
       <div class="container">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p class="text-xs sm:text-sm text-gray-400">
+          <p class="text-xs sm:text-sm text-gray-200">
             Copyright ©2025 - Movara
           </p>
           <div class="flex flex-col md:flex-row gap-4 md:gap-8">
-            <ul class="flex gap-4">
+            <!-- <ul class="flex gap-4">
               <li>
-                <a href="/legal/privacy-policy" class="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="/legal/privacy-policy" class="text-xs sm:text-sm text-gray-200 hover:text-white transition-colors duration-200">
                   Privacy Policy
                 </a>
               </li>
-            </ul>
+            </ul> -->
             <ul class="flex gap-4">
               <li>
-                <a href="http://milkshake.studio" target="_blank" class="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  Site by Milkshake
+                <a href="https://kiiyurus.space" target="_blank" class="text-xs sm:text-sm text-gray-200 hover:text-white transition-colors duration-200">
+                  Site by Kiiyuru
                 </a>
               </li>
             </ul>

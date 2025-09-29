@@ -134,12 +134,12 @@ export default function Nav({ currentPath }: { currentPath: string }) {
               </li>
               <li className="overlay-link">
                 <a 
-                  href="https://www.linkedin.com/company/purposeventure/" 
+                  href="https://calendly.com/jmgichuki/30min" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2 hover:underline transition-colors duration-200 text-6xl pr-2"
                 >
-                  LinkedIn
+                  Consultation
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 9H15M15 9L10.5 4.5M15 9L10.5 13.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -165,12 +165,12 @@ export default function Nav({ currentPath }: { currentPath: string }) {
             </li>
             <li className="overlay-link">
               <a 
-                href="https://www.linkedin.com/company/purposeventure/" 
+                href="https://calendly.com/jmgichuki/30min" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 hover:underline text-white transition-colors duration-200"
               >
-                LinkedIn
+                Consultation
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 9H15M15 9L10.5 4.5M15 9L10.5 13.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

@@ -10,48 +10,52 @@ const servicesData = [
     title: 'Build a Future-Ready Business',
     subtitle: 'Future Readiness & Navigating Uncertainty',
     description: 'The future is uncertain. But you can prepare for it. We guide you through interactive workshops to help you clarify your vision, explore different futures through scenario planning, and spot opportunities early to open new markets.',
-    caseStudy: {
-      title: 'Case Study',
-      description: 'A tech startup hired Movara to design and implement their strategic planning framework.',
-      link: '/work/future-ready',
-      image: '/favicon.svg'
-    }
+    image: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    // caseStudy: {
+    //   title: 'Case Study',
+    //   description: 'A tech startup hired Movara to design and implement their strategic planning framework.',
+    //   link: '/work/future-ready',
+    //   image: '/favicon.svg'
+    // }
   },
   {
     id: 2,
     title: 'Execute with Discipline Today',
     subtitle: 'Strategy Execution',
     description: 'A solid strategy is just the beginning—execution makes it real. Our hands-on execution workshops help you set the right milestones and KPIs, align your teams and priorities, and break down big annual goals into clear, actionable tasks.',
-    caseStudy: {
-      title: 'Case Study',
-      description: 'A corporate client achieved 40% faster execution through our disciplined approach.',
-      link: '/work/execution',
-      image: '/favicon.svg'
-    }
+    image: 'https://images.unsplash.com/photo-1683107695974-98a9fddb249a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    // caseStudy: {
+    //   title: 'Case Study',
+    //   description: 'A corporate client achieved 40% faster execution through our disciplined approach.',
+    //   link: '/work/execution',
+    //   image: '/favicon.svg'
+    // }
   },
   {
     id: 3,
     title: 'Transform with Technology',
     subtitle: 'Digital & AI Integration',
     description: 'Technology keeps moving fast—we help you keep up and get ahead. We work with you to assess your digital maturity, build a digital transformation roadmap, and integrate AI and emerging technologies in ways that drive growth.',
-    caseStudy: {
-      title: 'Case Study',
-      description: 'Reduced non-performing loans in digital agriculture from 70% to under 10%.',
-      link: '/work/digital-transformation',
-      image: '/favicon.svg'
-    }
+    image: 'https://images.unsplash.com/photo-1559163206-6615672fad34?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    // caseStudy: {
+    //   title: 'Case Study',
+    //   description: 'Reduced non-performing loans in digital agriculture from 70% to under 10%.',
+    //   link: '/work/digital-transformation',
+    //   image: '/favicon.svg'
+    // }
   },
   {
     id: 4,
     title: 'Strategic Planning & Execution',
     subtitle: 'Comprehensive Strategy Support',
     description: 'From initial strategy development to final execution, we provide end-to-end support. Our comprehensive approach includes competitor analysis, market research, strategic planning, and ongoing execution support to ensure your success.',
-    caseStudy: {
-      title: 'Case Study',
-      description: 'Helped a mid-size company increase market share by 35% in 18 months.',
-      link: '/work/strategic-planning',
-      image: '/favicon.svg'
-    }
+    image: 'https://images.unsplash.com/photo-1590402494587-44b71d7772f6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    // caseStudy: {
+    //   title: 'Case Study',
+    //   description: 'Helped a mid-size company increase market share by 35% in 18 months.',
+    //   link: '/work/strategic-planning',
+    //   image: '/favicon.svg'
+    // }
   }
 ]
 

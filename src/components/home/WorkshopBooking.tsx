@@ -73,8 +73,6 @@ const workshopBookingSchema = z.object({
   date: z.string().min(1, 'Please select a preferred date'),
 })
 
-type WorkshopBookingForm = z.infer<typeof workshopBookingSchema>
-
 export default function WorkshopBooking() {
   const sectionRef = useRef<HTMLElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
