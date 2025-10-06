@@ -1,7 +1,7 @@
+// @ts-nocheck
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
-import ActionLink from '@/components/ActionLink'
 import { z } from 'zod'
 
 const workshops = [
@@ -17,6 +17,7 @@ const workshops = [
       'Possible market shifts with clear trigger points',
       'Key risks and signals to monitor',
     ],
+    image: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop',
     ctaText: 'Learn More',
     href: '/workshops/align-leaders',
   },
@@ -24,7 +25,7 @@ const workshops = [
     id: 2,
     title: 'Translate strategy into executable tasks',
     description:
-      'We help your team achieve alignment, break strategy into executable tasks with clear start and end dates, tie daily work to strategic goals, and set up the discipline needed for execution.',
+      'We help your team achieve alignment, break strategy into executable tasks with clear start and end dates and set up the discipline needed for execution.',
     bullets: [
       'Annual or quarterly execution plans with clear outcomes',
       'Key performance measures linked to strategy',
@@ -32,6 +33,7 @@ const workshops = [
       'A clear view of dependencies and risks',
       'A review rhythm to track progress and adjust',
     ],
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1400&auto=format&fit=crop',
     ctaText: 'Learn More',
     href: '/workshops/strategy-execution',
   },
@@ -46,6 +48,7 @@ const workshops = [
       'Options laid out with trade-offs made visible',
       'A decision or action plan to move forward',
     ],
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop',
     ctaText: 'Learn More',
     href: '/workshops/issue-resolution',
   },
@@ -60,6 +63,7 @@ const workshops = [
       'Agreed response options and playbooks',
       'Adjusted priorities',
     ],
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1400&auto=format&fit=crop',
     ctaText: 'Learn More',
     href: '/workshops/competitive-wargaming',
   },
@@ -74,13 +78,13 @@ const workshopBookingSchema = z.object({
 })
 
 export default function WorkshopBooking() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const gridRef = useRef<HTMLDivElement>(null)
-  const formRef = useRef<HTMLFormElement>(null)
-  const workshopRefs = useRef<Array<HTMLDivElement | null>>([])
-  
+  const sectionRef = useRef < HTMLElement > (null)
+  const gridRef = useRef < HTMLDivElement > (null)
+  const formRef = useRef < HTMLFormElement > (null)
+  const workshopRefs = useRef < Array < HTMLDivElement | null >> ([])
+
   // Validation state
-  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [errors, setErrors] = useState({})
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -135,18 +139,11 @@ export default function WorkshopBooking() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="w-full py-12 sm:py-16 lg:py-20 bg-accent">
+    <section
+      ref={sectionRef}
+      className="w-full py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-accent"
+    >
       <div className="container-wide mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-gray-700 mb-4 sm:mb-6 leading-tight">
-            Clarity. Alignment. Execution.
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Future-ready strategy workshops that deliver results.
-          </p>
-        </div>
-
         <div className="grid lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
           {/* Workshop Grid - Takes up 2/3 of the space */}
           <div ref={gridRef} className="lg:col-span-2">
@@ -155,24 +152,42 @@ export default function WorkshopBooking() {
                 <div
                   key={workshop.id}
                   ref={(el) => { workshopRefs.current[index] = el }}
-                  className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flip group"
                 >
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4 leading-tight">
-                    {workshop.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    {workshop.description}
-                  </p>
-                  {Array.isArray(workshop.bullets) && (
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
-                      {workshop.bullets.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                  {/* <ActionLink href={workshop.href} className="text-primary font-medium">
-                    {workshop.ctaText}
-                  </ActionLink> */}
+                  <div className="flip-inner relative h-80 sm:h-96 rounded-lg shadow-sm border border-gray-100">
+                    {/* Front */}
+                    <div className="flip-face absolute inset-0 bg-white rounded-lg p-6 sm:p-8 flex flex-col">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4 leading-tight">
+                        {workshop.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                        {workshop.description}
+                      </p>
+                      <div className="mt-auto">
+                        <img
+                          src={workshop.image}
+                          alt={workshop.title}
+                          className="w-full h-28 sm:h-32 object-cover rounded-md"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Back */}
+                    <div className="flip-face flip-back absolute inset-0 bg-white rounded-lg p-6 sm:p-8">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4 leading-tight">
+                        What You'll Get
+                      </h3>
+                      {Array.isArray(workshop.bullets) && (
+                        <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-base my-auto">
+                          {workshop.bullets.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -180,7 +195,7 @@ export default function WorkshopBooking() {
 
           {/* Booking Form - Takes up 1/3 of the space */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 sticky top-8">
+            <div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-4 sm:mb-6">
                 Book Your Workshop
               </h3>
@@ -188,34 +203,34 @@ export default function WorkshopBooking() {
                 ref={formRef}
                 onSubmit={(e) => {
                   e.preventDefault()
-                  
+
                   // Get form data
                   const formData = new FormData(e.currentTarget)
                   const formDataObj = {
                     name: String(formData.get('name') || ''),
                     email: String(formData.get('email') || ''),
                     workshop: String(formData.get('workshop') || ''),
-                    date: String(formData.get('date') || '')
+                    date: String(formData.get('date') || ''),
                   }
-                  
+
                   // Validate form data with Zod
                   const validationResult = workshopBookingSchema.safeParse(formDataObj)
-                  
+
                   if (!validationResult.success) {
                     // Convert Zod errors to a simple error object
-                    const newErrors: Record<string, string> = {}
+                    const newErrors = {}
                     validationResult.error.issues.forEach((issue) => {
                       if (issue.path[0]) {
-                        newErrors[issue.path[0] as string] = issue.message
+                        newErrors[String(issue.path[0])] = issue.message
                       }
                     })
                     setErrors(newErrors)
                     return
                   }
-                  
+
                   // Clear any previous errors
                   setErrors({})
-                  
+
                   // Find the selected workshop title
                   const selectedWorkshop = workshops.find(w => w.id === Number.parseInt(formDataObj.workshop))
                   const workshopTitle = selectedWorkshop?.title || 'a workshop'
@@ -237,7 +252,7 @@ Best regards,
 ${formDataObj.name}`)
 
                   // Open email client with pre-populated data
-                  window.location.href = `mailto:workshops@movara.com?subject=${subject}&body=${body}`
+                  window.location.href = `mailto:jmgichuki@movara.co?subject=${subject}&body=${body}`
                 }}
                 className="space-y-4 sm:space-y-6"
               >

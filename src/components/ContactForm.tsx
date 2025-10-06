@@ -104,7 +104,7 @@ Best regards,
 ${formDataObj.name}`)
 
           // Open email client with pre-populated data
-          window.location.href = `mailto:hello@movara.com?subject=${subject}&body=${body}`
+          window.location.href = `mailto:jmgichuki@movara.co?subject=${subject}&body=${body}`
         }}
         className="space-y-4 sm:space-y-6"
       >

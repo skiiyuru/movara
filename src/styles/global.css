@@ -469,6 +469,30 @@ h4 { font-size: var(--font-size-xl); }
   }
 }
 
+/* Flip card utility for WorkshopBooking */
+.flip {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.flip:hover .flip-inner,
+.flip.group:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
 /* Desktop styles - stacking effect */
 @media (min-width: 768px) {
   .stacking-cards {

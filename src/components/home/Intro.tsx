@@ -53,7 +53,7 @@ export default function Intro() {
     <div className="bg-white py-16 sm:py-20 lg:py-24 xl:py-32">
       <section ref={sectionRef} className="container-wide mx-auto px-4 sm:px-6">
         <div className="">
-          <h2
+          <h1
             ref={paragraphRef}
             className="font-display text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-tight lg:leading-tight"
           >
@@ -61,7 +61,7 @@ export default function Intro() {
             and make it work in the real world. Our gaming-centered workshops—from
             competitor wargaming to scenario planning—create a safe space to explore
             what could happen before it does.
-          </h2>
+          </h1>
         </div>
       </section>
     </div>
