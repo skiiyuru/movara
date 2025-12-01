@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import NavLink from './NavLink'
 import LatestPostsNav from './LatestPostsNav'
+import logo from '../assets/images/logo.jpeg'
 
 export default function Nav({ currentPath }: { currentPath: string }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,7 +72,8 @@ export default function Nav({ currentPath }: { currentPath: string }) {
       <nav className="transition-colors duration-500 bg-white border-b border-gray-200/50 z-50 relative" id="main-nav">
         <div className="container flex items-center justify-between h-16 sm:h-20 px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Logo */}
-        <a href="/" className="flex-shrink-0 transition-colors duration-500" aria-label="Movara">
+        <a href="/" className="flex-shrink-0 transition-colors duration-500 space-x-2" aria-label="Movara">
+          <img src={logo.src} className='size-5 md:size-10 rounded' />
           <span id="nav-logo-text" className="font-display tracking-tight text-2xl sm:text-3xl lg:text-4xl font-bold">Movara</span>
         </a>
         {/* Desktop Nav Links */}
