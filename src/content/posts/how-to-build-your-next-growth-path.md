@@ -2,8 +2,8 @@
 title: "How to Build Your Next Growth Path Through Execution Discipline"
 description: "Why execution discipline—not just strategy—is what enables companies to build the next growth curve."
 pubDate: 2025-12-02
-thumbnail: ./images/thumbnails/momentum.png
-isDraft: true
+thumbnail: ./images/thumbnails/growth-path.png
+isDraft: false
 category: strategy
 author: Movara Team
 avatar: ./images/avatars/default.png

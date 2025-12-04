@@ -2,8 +2,8 @@
 title: "How Salesforce Keeps 76,000 People Aligned"
 description: "The simple alignment system that helps Salesforce keep thousands of employees rowing in the same direction consistently."
 pubDate: 2025-12-02
-thumbnail: ./images/thumbnails/momentum.png
-isDraft: true
+thumbnail: ./images/thumbnails/salesforce-alignment.png
+isDraft: false
 category: case study
 author: Movara Team
 avatar: ./images/avatars/default.png
