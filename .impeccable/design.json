@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-06T11:46:00Z",
+  "title": "Design System: Movara Consulting",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Horizon Teal",
+        "canonical": "oklch(69% 0.11 192)",
+        "tonalRamp": [
+          "oklch(18% 0.05 192)",
+          "oklch(28% 0.08 192)",
+          "oklch(40% 0.10 192)",
+          "oklch(52% 0.11 192)",
+          "oklch(61% 0.11 192)",
+          "oklch(69% 0.11 192)",
+          "oklch(80% 0.07 192)",
+          "oklch(92% 0.03 192)"
+        ]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Savanna Gold",
+        "canonical": "oklch(70% 0.16 75)",
+        "tonalRamp": [
+          "oklch(18% 0.06 75)",
+          "oklch(30% 0.10 75)",
+          "oklch(42% 0.13 75)",
+          "oklch(54% 0.15 75)",
+          "oklch(63% 0.16 75)",
+          "oklch(70% 0.16 75)",
+          "oklch(82% 0.10 75)",
+          "oklch(93% 0.04 75)"
+        ]
+      },
+      "accent": {
+        "role": "tertiary",
+        "displayName": "Sky Wash",
+        "canonical": "oklch(90% 0.05 240)",
+        "tonalRamp": [
+          "oklch(18% 0.02 240)",
+          "oklch(32% 0.03 240)",
+          "oklch(48% 0.04 240)",
+          "oklch(62% 0.05 240)",
+          "oklch(74% 0.05 240)",
+          "oklch(82% 0.05 240)",
+          "oklch(90% 0.05 240)",
+          "oklch(96% 0.02 240)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Dust Rose",
+        "canonical": "oklch(88% 0.01 30)",
+        "tonalRamp": [
+          "oklch(18% 0.006 30)",
+          "oklch(32% 0.008 30)",
+          "oklch(48% 0.009 30)",
+          "oklch(62% 0.009 30)",
+          "oklch(74% 0.010 30)",
+          "oklch(82% 0.010 30)",
+          "oklch(88% 0.010 30)",
+          "oklch(95% 0.005 30)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero-level headlines and primary section titles. One per viewport — never stacked."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section openers, card titles in feature contexts."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-section headers, service card titles, form headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running copy. Hard cap at 70ch line length."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button text, nav links, meta labels. Never lowercase for interactive elements."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-low",
+        "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "purpose": "Smallest-scale surfaces; barely perceptible separation from background."
+      },
+      {
+        "name": "ambient-mid",
+        "value": "0 4px 6px rgba(0, 0, 0, 0.1)",
+        "purpose": "Default resting state for .card and button active states."
+      },
+      {
+        "name": "lift",
+        "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+        "purpose": "Navigation open state; elevated panels."
+      },
+      {
+        "name": "elevated",
+        "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+        "purpose": ".card:hover — the interactive lift. Accompanies translateY(-4px)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-fast",
+        "value": "0.15s ease-in-out",
+        "purpose": "Micro-interactions: icon swaps, small opacity changes."
+      },
+      {
+        "name": "ease-standard",
+        "value": "0.2s ease-in-out",
+        "purpose": "Default CSS state transitions: hover backgrounds, border shifts."
+      },
+      {
+        "name": "ease-slow",
+        "value": "0.3s ease-in-out",
+        "purpose": "Card lifts and shadow transitions."
+      },
+      {
+        "name": "editorial",
+        "value": "0.5s ease-in-out",
+        "purpose": "ActionLink arrow badge — intentionally slow for editorial weight."
+      },
+      {
+        "name": "gsap-menu-open",
+        "value": "duration: 0.5, ease: power2.out, clipPath wipe",
+        "purpose": "Mobile menu expand. GSAP only — never replicated in CSS."
+      },
+      {
+        "name": "gsap-hero-zoom",
+        "value": "scale 1→35, scrub 2.5, ease: back.out(1.7)",
+        "purpose": "Hero SVG scroll-zoom. ScrollTrigger pinned section."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "767px", "note": "max-width; base styles apply below this" },
+      { "name": "tablet", "value": "768px", "note": "min-width; tablet layout begins" },
+      { "name": "desktop", "value": "1024px", "note": "min-width; full desktop layout" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Horizon Teal fill, white text. Darkens to near-black on hover with 1px lift.",
+      "html": "<button class=\"ds-btn-primary\">GET STARTED</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.5rem; background-color: #38b2ac; color: #ffffff; font-family: 'Instrument Sans', sans-serif; font-size: 1rem; font-weight: 500; border-radius: 0.375rem; border: none; cursor: pointer; text-decoration: none; min-height: 3rem; min-width: 3rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .ds-btn-primary:hover { background-color: #1F2937; transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); } .ds-btn-primary:focus-visible { outline: 2px solid #d69e2e; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost variant. Teal border and text at rest; fills to Teal on hover with text inversion.",
+      "html": "<button class=\"ds-btn-secondary\">LEARN MORE</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.5rem; background-color: transparent; color: #38b2ac; font-family: 'Instrument Sans', sans-serif; font-size: 1rem; font-weight: 500; border-radius: 0.375rem; border: 2px solid #38b2ac; cursor: pointer; text-decoration: none; min-height: 3rem; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .ds-btn-secondary:hover { background-color: #38b2ac; color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); } .ds-btn-secondary:focus-visible { outline: 2px solid #d69e2e; outline-offset: 2px; }"
+    },
+    {
+      "name": "ActionLink",
+      "kind": "custom",
+      "refersTo": "action-link",
+      "description": "Directional inline CTA with arrow badge. Text hovers to Savanna Gold; badge hovers from Teal to Gold.",
+      "html": "<a href=\"#\" class=\"ds-action-link\"><span>Explore the case study</span><div class=\"ds-action-link__badge\"><svg width=\"12\" height=\"11\" viewBox=\"0 0 12 11\" fill=\"none\"><path d=\"M0.9 5.06H9.82L5.44 0.65H6.94L11.85 5.6L6.93 10.55H5.43L9.83 6.14H0.9V5.06Z\" fill=\"white\"/></svg></div></a>",
+      "css": ".ds-action-link { display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none; font-family: 'Instrument Sans', sans-serif; font-size: 0.875rem; font-weight: 500; min-height: 44px; transition: color 0.5s ease-in-out; } .ds-action-link:hover { color: #d69e2e; } .ds-action-link__badge { display: flex; align-items: center; justify-content: center; background-color: #38b2ac; padding: 0.375rem; border-radius: 0.375rem; transition: background-color 0.5s ease-in-out; } .ds-action-link:hover .ds-action-link__badge { background-color: #d69e2e; } .ds-action-link:focus-visible { outline: 2px solid #d69e2e; outline-offset: 2px; border-radius: 0.25rem; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Default content card. Ambient shadow at rest; elevated shadow and 4px lift on hover.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card__title\">Future Readiness</h3><p class=\"ds-card__body\">Prepare for market shifts before they force your hand.</p></div>",
+      "css": ".ds-card { background: #ffffff; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; max-width: 360px; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); } .ds-card__title { font-family: 'Hedvig Letters Serif Variable', serif; font-size: 1.25rem; font-weight: 400; line-height: 1.2; color: #374151; margin: 0 0 0.75rem; } .ds-card__body { font-family: 'Instrument Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #374151; margin: 0; max-width: 55ch; }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Text field. Neutral stroke at rest; Savanna Gold border on focus with Teal-tinted halo.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"ds-input-name\">Your name</label><input class=\"ds-field__input\" id=\"ds-input-name\" type=\"text\" placeholder=\"Jane Doe\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.375rem; } .ds-field__label { font-family: 'Instrument Sans', sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; color: #374151; } .ds-field__input { width: 100%; padding: 1rem; border: 1px solid #D1D5DB; border-radius: 0.375rem; font-family: 'Instrument Sans', sans-serif; font-size: 1rem; color: #374151; background-color: #ffffff; min-height: 3rem; box-sizing: border-box; transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .ds-field__input:focus { outline: none; border-color: #d69e2e; box-shadow: 0 0 0 3px rgba(56, 178, 172, 0.1); } .ds-field__input::placeholder { color: #9CA3AF; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Sticky top nav. White at rest with Teal logo and links. Mobile menu button is Teal-filled. Full-screen Teal overlay on open (GSAP clip-path wipe).",
+      "html": "<nav class=\"ds-nav\"><a href=\"/\" class=\"ds-nav__logo\">Movara</a><ul class=\"ds-nav__links\"><li><a href=\"/about\" class=\"ds-nav__link\">About</a></li><li><a href=\"/contact\" class=\"ds-nav__link\">Contact</a></li><li><a href=\"/blog\" class=\"ds-nav__link\">Latest</a></li></ul><button class=\"ds-nav__menu-btn\" aria-label=\"Open menu\"><svg width=\"20\" height=\"20\" fill=\"none\" viewBox=\"0 0 24 24\"><rect y=\"8\" width=\"24\" height=\"2\" rx=\"1\" fill=\"white\"/><rect y=\"14\" width=\"24\" height=\"2\" rx=\"1\" fill=\"white\"/></svg></button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 5rem; background-color: #ffffff; border-bottom: 1px solid rgba(209, 213, 219, 0.5); position: sticky; top: 0; z-index: 50; } .ds-nav__logo { font-family: 'Hedvig Letters Serif Variable', serif; font-size: 2rem; font-weight: 700; color: #38b2ac; text-decoration: none; letter-spacing: -0.02em; } .ds-nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; } .ds-nav__link { font-family: 'Instrument Sans', sans-serif; font-size: 1rem; font-weight: 600; color: #38b2ac; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.375rem; min-height: 2.5rem; display: flex; align-items: center; transition: background-color 0.2s ease-in-out; } .ds-nav__link:hover { background-color: #DBEAFE; } .ds-nav__link[aria-current=\"page\"] { background-color: #DBEAFE; } .ds-nav__menu-btn { background-color: #38b2ac; border: none; border-radius: 0.375rem; padding: 0.5rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .ds-nav__menu-btn:hover { transform: scale(1.02); box-shadow: 0 4px 6px rgba(0,0,0,0.1); } .ds-nav__menu-btn:focus-visible { outline: 2px solid #d69e2e; outline-offset: 2px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Signature stacked scroll card for the services section. Split layout: image half + content half. Alternates background tints across stack.",
+      "html": "<div class=\"ds-service-card\"><div class=\"ds-service-card__media\"><img src=\"https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=60\" alt=\"Strategy workshop\" class=\"ds-service-card__img\" /></div><div class=\"ds-service-card__content\"><h2 class=\"ds-service-card__title\">Future Readiness &amp; Navigating Uncertainty</h2><p class=\"ds-service-card__body\">The future is uncertain. But you can prepare for it. We guide you through interactive workshops to clarify your vision, explore different futures through scenario planning, and spot opportunities before the market forces your hand.</p><a href=\"#\" class=\"ds-action-link\"><span>Explore the service</span><div class=\"ds-action-link__badge\"><svg width=\"12\" height=\"11\" viewBox=\"0 0 12 11\" fill=\"none\"><path d=\"M0.9 5.06H9.82L5.44 0.65H6.94L11.85 5.6L6.93 10.55H5.43L9.83 6.14H0.9V5.06Z\" fill=\"white\"/></svg></div></a></div></div>",
+      "css": ".ds-service-card { display: flex; flex-direction: column; background-color: #ffffff; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; } @media (min-width: 1024px) { .ds-service-card { flex-direction: row-reverse; } } .ds-service-card__media { flex: 1; min-height: 12rem; } .ds-service-card__img { width: 100%; height: 100%; object-fit: cover; display: block; } .ds-service-card__content { flex: 1; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; } @media (min-width: 1024px) { .ds-service-card__content { padding: 3rem; } } .ds-service-card__title { font-family: 'Hedvig Letters Serif Variable', serif; font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; color: #374151; margin: 0; } .ds-service-card__body { font-family: 'Instrument Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #374151; margin: 0; max-width: 60ch; } .ds-action-link { display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none; font-family: 'Instrument Sans', sans-serif; font-size: 0.875rem; font-weight: 500; min-height: 44px; transition: color 0.5s ease-in-out; } .ds-action-link:hover { color: #d69e2e; } .ds-action-link__badge { display: flex; align-items: center; justify-content: center; background-color: #38b2ac; padding: 0.375rem; border-radius: 0.375rem; transition: background-color 0.5s ease-in-out; } .ds-action-link:hover .ds-action-link__badge { background-color: #d69e2e; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Strategy War Room",
+    "overview": "Movara serves leaders who carry real weight: the kind who are scanning the horizon for the shift they know is coming, preparing for disruption before it arrives. This design system reflects that posture. It is warm but never casual, editorial but never decorative. Every surface earns its presence — nothing performs, everything informs.\n\nThe palette is grounded in two deliberate anchors: a teal that reads as action and clarity (Horizon Teal), and an amber that reads as hard-won insight (Savanna Gold). Backgrounds stay quiet so content commands. Motion is purposeful — the GSAP-driven menu wipe and hero scroll zoom are moments of intention, not entertainment.\n\nThe system explicitly rejects the SaaS-landing-page playbook: no hero metrics, no gradient text, no glass cards, no identical icon-grid service layouts. It also rejects generic African brand visual clichés. This is a consulting firm for boards and leadership teams.",
+    "keyCharacteristics": [
+      "Serif headlines anchored in Hedvig Letters Serif — authoritative without being stiff",
+      "Teal as the action signal; amber as the warmth accent; used at different frequencies",
+      "Ambient shadows on all resting cards; lift amplifies on hover",
+      "GSAP animation for theatrical moments (menu, hero zoom); CSS transitions only for state changes",
+      "Body copy capped at 70ch; generous vertical rhythm; no uniform section padding"
+    ],
+    "rules": [
+      {
+        "name": "The Two-Signal Rule",
+        "body": "Horizon Teal signals action (do this, go here, open this). Savanna Gold signals confirmation and warmth (focused, selected, complete). They must never occupy the same interactive element simultaneously.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rarity Rule",
+        "body": "Savanna Gold is forbidden as a background color for any element larger than a focus ring or a 2px outline. Its scarcity is what gives it authority.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Display Rule",
+        "body": "A single Display-scale element per viewport height. Multiple display headlines on one screen collapse the hierarchy and dilute authority.",
+        "section": "typography"
+      },
+      {
+        "name": "The 70ch Ceiling",
+        "body": "Body copy containers are capped at 70ch width. Layout containers may be wider; text columns are not.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ambient Floor Rule",
+        "body": "No interactive card surface is ever shadowless at rest. A card without a shadow is a static decoration. A card with an ambient shadow is an invitation to interact.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat-Transition Rule",
+        "body": "Shadows transition with CSS transition-shadow; transforms translate separately. Never animate both simultaneously on the same property cascade.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Horizon Teal (#38b2ac) as the single action signal — on buttons, links with badges, open menu state, and focus indicators.",
+      "Do apply an ambient shadow (shadow-md) to every resting interactive card.",
+      "Do cap all body copy containers at 70ch.",
+      "Do let the serif headline (Hedvig) carry section authority — one Display-scale headline per viewport, set at weight 400.",
+      "Do use Savanna Gold exclusively for focus rings, secondary borders, and hover text accents.",
+      "Do use GSAP for theatrical transitions (menu wipe, hero scroll zoom). Use CSS transition for all state changes.",
+      "Do use ease-out (power2.out or equivalent) for entrances. Exits use ease-in. Never bounce, never elastic.",
+      "Do let section padding vary. The rhythm comes from inconsistency at the macro scale."
+    ],
+    "donts": [
+      "Don't use gradient text (background-clip: text with a gradient fill).",
+      "Don't use border-left greater than 1px as a colored accent stripe on cards, callouts, or list items.",
+      "Don't use glassmorphism. No backdrop-filter: blur on decorative cards.",
+      "Don't build the hero-metric template: big number, small label, gradient accent.",
+      "Don't render identical icon-grid cards across a service or features section.",
+      "Don't use Arizonia (the script logo font) anywhere in body, UI, or marketing copy.",
+      "Don't apply Savanna Gold as a fill background on any element larger than a 2px focus ring or border.",
+      "Don't use Sky Wash (#DBEAFE) as an error state indicator.",
+      "Don't use #000000 or #ffffff as direct values in CSS."
+    ]
+  }
+}
