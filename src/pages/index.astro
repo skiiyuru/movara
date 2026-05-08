@@ -5,10 +5,12 @@ import Services from '@/components/home/Services'
 import Testimonials from '@/components/home/Testimonials'
 import WhyMovara from '@/components/home/WhyMovara.astro'
 import WorkshopBooking from '@/components/home/WorkshopBooking'
+import EventBanner from '@/components/home/EventBanner'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
+  <EventBanner client:load />
   <!-- <Hero client:load /> -->
   <WorkshopBooking client:load />
   <Intro client:load />
@@ -16,3 +18,4 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
   <Testimonials client:visible />
   <WhyMovara />
 </BaseLayout>
+
