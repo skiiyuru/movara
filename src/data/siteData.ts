@@ -2,7 +2,7 @@ export const baseData = {
   title: 'Movara Horizon',
   description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
   logo: {
-    src: '/favicon.svg',
+    src: '/logo.jpeg',
     alt: 'Movara Horizon',
   },
 }
@@ -89,7 +89,7 @@ export const servicesData = [
       title: 'Case Study',
       description: 'A tech startup hired Movara to design and implement their strategic planning framework.',
       link: '/work/future-ready',
-      image: '/favicon.svg',
+      image: '/logo.jpeg',
     },
   },
   {
@@ -101,7 +101,7 @@ export const servicesData = [
       title: 'Case Study',
       description: 'A corporate client achieved 40% faster execution through our disciplined approach.',
       link: '/work/execution',
-      image: '/favicon.svg',
+      image: '/logo.jpeg',
     },
   },
   {
@@ -113,7 +113,7 @@ export const servicesData = [
       title: 'Case Study',
       description: 'Reduced non-performing loans in digital agriculture from 70% to under 10%.',
       link: '/work/digital-transformation',
-      image: '/favicon.svg',
+      image: '/logo.jpeg',
     },
   },
   {
@@ -125,7 +125,7 @@ export const servicesData = [
       title: 'Case Study',
       description: 'Helped a mid-size company increase market share by 35% in 18 months.',
       link: '/work/strategic-planning',
-      image: '/favicon.svg',
+      image: '/logo.jpeg',
     },
   },
 ]
