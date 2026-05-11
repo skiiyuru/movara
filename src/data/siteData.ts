@@ -1,6 +1,6 @@
 export const baseData = {
   title: 'Movara Horizon',
-  description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
+  description: `Movara is a strategy consulting firm helping tech-driven businesses across Africa prepare for disruption and execute with discipline.`,
   logo: {
     src: '/logo.jpeg',
     alt: 'Movara Horizon',
