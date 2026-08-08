@@ -28,14 +28,14 @@ const DEFAULTS: Required<EventBannerProps> = {
   pillars: [
     { verb: 'Review', noun: 'Progress' },
     { verb: 'Interpret', noun: 'Market' },
-    { verb: 'Diagnose', noun: 'Perfomance' },
+    { verb: 'Diagnose', noun: 'Performance' },
     { verb: 'Build', noun: 'Plan' },
   ],
   date: 'Thursday, 17th September 2026',
   location: 'Nairobi \u2014 Venue confirmed upon registration',
   investment: 'KES 20,000 per participant',
   registrationUrl:
-    'https://docs.google.com/forms/d/e/1FAIpQLSey4LiZFeNN0V2n6Cwb3E_nypfq34bhdM4GGWmVzJn4vfFCAw/viewform',
+    'https://forms.gle/pqPTtG9CVMQyrkYU7',
   posterSrc: posterImage,
   posterAlt: 'The Execution Room event \u2014 leaders working through strategic plans at a table in Nairobi',
 }
